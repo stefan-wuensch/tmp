@@ -8,6 +8,27 @@ HUIT recommends AWS applications be monitored with a two-factor approach:
 - **CloudWatch Alarms** which are Amazon-provided monitoring services within the Virtual Private Cloud (inside looking in) and 
 - **Nagios Service Checks** which monitor from outside the AWS environment (outside looking in)
 
+CloudWatch Alarms are used to monitor aspects (Metrics) of AWS services which are not part of the public-facing application. 
+For example, CPU Utilization metrics of a database instance are not part of the customer experience when viewing a web site. 
+Nagios checks are used to monitor both the customer experience (web pages, content) but also to receive and process the CloudWatch 
+notifications. This allows Nagios to be a single point of aggregation and distribution of alert messages. 
+
+HUIT Nagios is able to send [alert notifications](http://nagios.sourceforge.net/docs/nagioscore/4/en/notifications.html) to a variety 
+of destinations, including (but not limited to):
+- HUIT SOC Operations Center staffed 24x7 (via ITO / OpenView)
+- SMS (phones / pagers) via SMTP
+- SMS via Cellular Modem
+- email (SMTP)
+This documentation will focus on notifications to SOC Operations via OpenView.
+
+
+## Overview
+
+**CloudFormation Templates** are [JSON](http://en.wikipedia.org/wiki/JSON) files which define the configuration of 
+**CloudFormation Stacks**. Stacks are collections of AWS resources which are related to a common application or function.
+For more information see http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-whatis-concepts.html
+
+
 
 
 ## Important notes
@@ -25,6 +46,10 @@ HUIT recommends AWS applications be monitored with a two-factor approach:
   - [Event Handlers](http://nagios.sourceforge.net/docs/nagioscore/4/en/eventhandlers.html)
   - [Active Checks](http://nagios.sourceforge.net/docs/nagioscore/4/en/activechecks.html) vs. [Passive Checks](http://nagios.sourceforge.net/docs/nagioscore/4/en/passivechecks.html)
   
+- This guide does not document the use of [Github](https://github.com/HUIT-Systems-Management-Linux-UNIX) for storage of CloudFormation Templates, 
+nor Nagios configuration files nor scripts. However, the use of Github for centralized storage is assumed.
+
+
 
 
 ## External Documentation
