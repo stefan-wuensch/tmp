@@ -4,6 +4,12 @@ This documentation covers the creation of monitoring of Amazon Web Services usin
 [AWS CloudWatch Alarms](http://aws.amazon.com/documentation/cloudwatch/) and 
 [Nagios](http://nagios.sourceforge.net/docs/nagioscore/4/en/toc.html). 
 
+HUIT recommends AWS applications be monitored with a two-factor approach: 
+- *CloudWatch Alarms* which are Amazon-provided monitoring services within the Virtual Private Cloud (inside looking in) and 
+- *Nagios Service Checks* which monitor from outside the AWS environment (outside looking in)
+
+
+
 ## Important notes
 
 - This guide assumes a working knowledge of AWS, specifically the following:
@@ -30,3 +36,8 @@ This documentation covers the creation of monitoring of Amazon Web Services usin
 [CloudFormation Templates](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-guide.html)
 
 
+## Attribution
+
+This documentation produced November 2014 by Stefan Wuensch <stefan_wuensch@harvard.edu>
+
+Assistance and additional material by Stephen Martino <stephen_martino@harvard.edu>
