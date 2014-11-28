@@ -29,6 +29,7 @@ This documentation will focus on notifications to SOC Operations via OpenView.
 For more information see http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-whatis-concepts.html
 
 Two Stacks are needed at minimum for each HUIT customer requiring AWS monitoring:
+
 1. a Stack of SNS Topics which define the target of CloudWatch Alarms
 2. a Stack of CloudWatch Alarms which define the Metrics to be monitored, and define the thresholds, time periods, and actions
 
