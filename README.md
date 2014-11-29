@@ -82,21 +82,16 @@ there must be values entered for each of the Parameters. If the Default values i
 very little effort.
 
 1. **ElasticLoadBalancer** is the Parameter for the name of the ELB.
-
 Look in the [AWS Console for Load Balancers](https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LoadBalancers:) and find the full name 
 of the ELB in the customer stack you are to monitor. Fill it in here as the Default.
-
 Example: "HPACLearn-ElasticL-JXIRIRNJ5LR6"
 
 2. **AdminNode** is the Parameter for the name of the Drupal admin node.
-
 In the [AWS Console for EC2 Instances](https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#Instances:sort=instanceId) find the Instance that is the Admin Node for 
 this customer. Enter the **Instance ID** as the Default value in the template.
-
 Example: "i-f4458015"
 
 3. **AutoScalingGroupMinSize** is the Parameter for minimum number of EC2 web server instances allowed
-
 This value is used to look up thresholds for use in the ELB Healthy Host Count alarm. Search the template for "HealthyHostCountMapByGroupMinimum" 
 to see the mapping of AutoScalingGroupMinSize to the thresholds. 
 
