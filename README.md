@@ -84,16 +84,27 @@ very little effort.
 1. **ElasticLoadBalancer** is the Parameter for the name of the ELB.
 Look in the [AWS Console for Load Balancers](https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LoadBalancers:) and find the full name 
 of the ELB in the customer stack you are to monitor. Fill it in here as the Default.
-Example: "HPACLearn-ElasticL-JXIRIRNJ5LR6"
+Example: `HPACLearn-ElasticL-JXIRIRNJ5LR6`
 
 2. **AdminNode** is the Parameter for the name of the Drupal admin node.
 In the [AWS Console for EC2 Instances](https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#Instances:sort=instanceId) find the Instance that is the Admin Node for 
 this customer. Enter the **Instance ID** as the Default value in the template.
-Example: "i-f4458015"
+Example: `i-f4458015`
 
-3. **AutoScalingGroupMinSize** is the Parameter for minimum number of EC2 web server instances allowed
-This value is used to look up thresholds for use in the ELB Healthy Host Count alarm. Search the template for "HealthyHostCountMapByGroupMinimum" 
+3. **AutoScalingGroupMinSize** is the Parameter for minimum number of EC2 web server instances allowed. 
+This value is used to look up thresholds for use in the ELB Healthy Host Count alarm. Search the template for `HealthyHostCountMapByGroupMinimum` 
 to see the mapping of AutoScalingGroupMinSize to the thresholds. 
+
+4. **MasterDB** is the Parameter for the name of the RDS (database) Instance. Go to the [AWS Console for RDS Instances](https://console.aws.amazon.com/rds/home?region=us-east-1#dbinstances:) 
+and find the RDS Instance for this customer's application. Fill in the name of the Instance as this Default. Example: `hdxmrpsfnzbr5v`
+
+5. **CriticalAlarmTopic** is the name of the SNS Topic which will send alarm notifications to Nagios. This topic name needs to be looked up in 
+the [AWS Console for SNS](https://console.aws.amazon.com/sns/) after the Topics Stack has been created. 
+**_TO DO_** Find out if any AWS VPC can talk to an existing SNS Topic!! If it can, we don't have to create a Topic Stack for every customer!!
+
+6. **DBClass** is the type of RDS. The `AllowedValues` should already include all popular types of RDS, but if not simply add to that list. 
+Then from the same [AWS Console for RDS Instances](https://console.aws.amazon.com/rds/home?region=us-east-1#dbinstances:) as in Step 4 find the RDS to be monitored and select (click) it. 
+
 
 
 
