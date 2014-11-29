@@ -22,6 +22,7 @@ of destinations, including (but not limited to):
 This documentation will focus on notifications to SOC Operations via OpenView.
 
 
+
 ## Overview
 
 **CloudFormation Templates** are [JSON](http://en.wikipedia.org/wiki/JSON) files which define the configuration of 
@@ -65,7 +66,8 @@ nor Nagios configuration files nor scripts. However, the use of Github for centr
 See the [folder of templates](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/tree/master/JSON-Templates) that are live in production for 
 Harvard Publishing and Communications (HPAC) and Harvard Web Publishing (HWP).
 
-Specifically, the template [online-learning-harvard-edu.json](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/JSON-Templates/online-learning-harvard-edu.json) 
+Specifically, the template 
+[online-learning-harvard-edu.json](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/JSON-Templates/online-learning-harvard-edu.json) 
 is one of the simplest. It only contains Alarm configurations for:
 
 - One ELB (Elastic Load Balancer)
