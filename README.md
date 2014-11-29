@@ -30,7 +30,7 @@ For more information see http://docs.aws.amazon.com/AWSCloudFormation/latest/Use
 
 Two Stacks are needed at minimum for each HUIT customer requiring AWS monitoring:
 
-1. a Stack of SNS Topics which define the target of CloudWatch Alarms
+1. a Stack of SNS Topics which define the target of CloudWatch Alarms' messages
 2. a Stack of CloudWatch Alarms which define the Metrics to be monitored, and define the thresholds, time periods, and actions
 
 For each Stack of CloudWatch Alarms, a set of Nagios configuration objects will be built by scripts on the Nagios server. 
@@ -56,6 +56,62 @@ for the specifics.
   
 - This guide does not document the use of [Github](https://github.com/HUIT-Systems-Management-Linux-UNIX) for storage of CloudFormation Templates, 
 nor Nagios configuration files nor scripts. However, the use of Github for centralized storage is assumed.
+
+
+## Getting Started
+
+### Start with an existing CloudFormation Template as a guide
+
+See the [folder of templates](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/tree/master/JSON-Templates) that are live in production for 
+Harvard Publishing and Communications (HPAC) and Harvard Web Publishing (HWP).
+
+Specifically, the template [online-learning-harvard-edu.json](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/JSON-Templates/online-learning-harvard-edu.json) 
+is one of the simplest. It only contains Alarm configurations for:
+
+- One ELB (Elastic Load Balancer)
+- One RDS (Relational Database Service)
+- One EC2 Instance for a Drupal admin node
+- Two EC2 Instances for Drupal webserver nodes
+
+Make a copy of that template. We will use it as the basis for creating a new Stack of CloudWatch Alarms.
+
+#### Parameters
+
+Note that the Default values given in the template are only for convenience and elminiating errors. Each time a CloudFormation Stack is updated, 
+there must be values entered for each of the Parameters. If the Default values in the template are kept current, then creating / updaing the Stack requires 
+very little effort.
+
+1. **ElasticLoadBalancer** is the Parameter for the name of the ELB.
+
+Look in the [AWS Console for Load Balancers](https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LoadBalancers:) and find the full name 
+of the ELB in the customer stack you are to monitor. Fill it in here as the Default.
+
+Example: "HPACLearn-ElasticL-JXIRIRNJ5LR6"
+
+2. **AdminNode** is the Parameter for the name of the Drupal admin node.
+
+In the [AWS Console for EC2 Instances](https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#Instances:sort=instanceId) find the Instance that is the Admin Node for 
+this customer. Enter the **Instance ID** as the Default value in the template.
+
+Example: "i-f4458015"
+
+3. **AutoScalingGroupMinSize** is the Parameter for minimum number of EC2 web server instances allowed
+
+This value is used to look up thresholds for use in the ELB Healthy Host Count alarm. Search the template for "HealthyHostCountMapByGroupMinimum" 
+to see the mapping of AutoScalingGroupMinSize to the thresholds. 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
