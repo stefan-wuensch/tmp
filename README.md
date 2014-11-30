@@ -102,10 +102,20 @@ and find the RDS Instance for this customer's application. Fill in the name of t
 
 5. **CriticalAlarmTopic** is the name of the SNS Topic which will send alarm notifications to Nagios. This topic name needs to be looked up in 
 the [AWS Console for SNS](https://console.aws.amazon.com/sns/) after the Topics Stack has been created. 
-**_TO DO_** Find out if any AWS VPC can talk to an existing SNS Topic!! If it can, we don't have to create a Topic Stack for every customer!!
+Example: `arn:aws:sns:us-east-1:014311208322:HUIT_Nagios_Critical` 
+**_TO DO_** Find out if any AWS VPC can talk to an existing SNS Topic in another VPC!! If it can, we don't have to create a Topic Stack for every customer!!
 
-6. **DBClass** is the type of RDS. The `AllowedValues` should already include all popular types of RDS, but if not simply add to that list. 
+6. **DBClass** is the type and size of RDS. The `AllowedValues` should already include all popular types of RDS, but if not simply add to that list. 
 Then from the same [AWS Console for RDS Instances](https://console.aws.amazon.com/rds/home?region=us-east-1#dbinstances:) as in Step 4 find the RDS to be monitored and select (click) it. 
+The value shown for `Instance Class` in the Console is the value to be used for `DBClass` in the template Default.
+Example: `db.m1.small`
+
+7. **DBName** is the database name itself. Unlike `MasterDB` in step 4 above (which is the name of the *RDS Instance*) the `DBName` is the 
+application-layer name of the database. It's this name that database clients use as well. Again refer to the same 
+[AWS Console for RDS Instances](https://console.aws.amazon.com/rds/home?region=us-east-1#dbinstances:) as in Step 4 and Step 6. Find the `DB Name` and 
+use this for the Default in the template. 
+Example: `drupaldb`
+
 
 
 
