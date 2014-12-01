@@ -1,3 +1,9 @@
+This folder contains documentation & instructions on how to set up / configure / use / maintain the monitoring services.
+
+**Note**: The `Old_Examples` subdirectory is included here as an archive of old documentation from Summer 2014. 
+Those docs are obsoleted by the Nagios configuration auto-generation built by Stefan during Fall 2014. 
+
+
 # HUIT Guide to configuring AWS Monitoring and Notifications
 
 This documentation covers the creation of monitoring of Amazon Web Services using 
@@ -259,10 +265,10 @@ That command definition is used by the AWS Host template in Nagios:
 ```
 define host {
 	name				aws-host-active-check
-	use				generic-host
+	use					generic-host
 	contact_groups			aws-critical-group
 	check_command			FAKE-host-alive
-	register			0
+	register				0
 }
 ```
 (Note that Nagios templates are simply a way of allowing related objects to inherit from a common config definition. 
