@@ -122,10 +122,12 @@ It must be unique across all AWS VPCs and sites that are monitored by HUIT Nagio
 The format is: website name as FQDN, with dots (periods) replaced by dashes (hyphens). 
 (AWS does not allow dots in Alarm Names, and the value of `SiteName` in the template is used to construct Alarm Names.) 
 Examples:
-  - site `harvard.edu` 			:arrow_right: `SiteName` `harvard-edu`
-  - site `news.harvard.edu` 		:arrow_right: `SiteName` `news-harvard-edu`
-  - site `campaign.harvard.edu` 	:arrow_right: `SiteName` `campaign-harvard-edu`
-  - site `online-learning.harvard.edu` 	:arrow_right: `SiteName` `online-learning-harvard-edu`
+Public Site Name		| `SiteName` in CloudFormation Template
+------------------------------- | ------------------------------
+`harvard.edu` 			| `harvard-edu`
+`news.harvard.edu` 		| `news-harvard-edu`
+`campaign.harvard.edu` 		| `campaign-harvard-edu`
+`online-learning.harvard.edu` 	| `online-learning-harvard-edu`
 
 
 
