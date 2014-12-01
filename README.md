@@ -307,14 +307,64 @@ The `use` parameter inherits from the host template as shown earlier.
 Notes:
 
 1. The `_AWS_Data` parameter is a [custom variable](http://nagios.sourceforge.net/docs/nagioscore/4/en/macros.html) 
-which would be used by the automation scripts. It is not needed in this non-automated example, but it's included 
-for completeness. 
+which is used by Nagios scripts. Below in the Service example it is explained.
 2. The `contact_groups` parameter is overriding the `contact_groups` parameter from the `aws-host-active-check` template. 
 Since the template is designed for production use (with the Contact Group `aws-critical-group`) we don't want to 
 be sending critical alerts through the prod notification channels for this test example!
 
 
 
+### Service Configuration
+
+In this simple example we will show how to create a single Nagios Service. It will be the `ReadIOPS` Metric 
+for the RDS Instance defined as the Nagios "Host" above. 
+
+**Important**: Nagios Service objects **must be unique** on a single Nagios Host. In other words, if you want to 
+monitor the same Metric more than once for a single AWS resource instance, you **must** give it a different 
+Nagios Service name for each one. For example if you wanted to monitor `ReadIOPS` with a certain action at a 
+low threshold but also include a different action (like an escalation to other contacts) if that same metric `ReadIOPS` 
+goes above a second threshold, you would have to create a different `service_description` for it.
+
+In this example, we are again using a Nagios template to inherit parameters that are common to other services.
+(The `aws-service-CloudFront-Alarm` template is quite large so it's not included here. You can view it in the 
+`aws-alarms.cfg` file in the [Configuration Examples](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/tree/master/Configuration/Examples).)
+
+Note that the `host_name` is the same as the `host_name` defined in the Host object in the previous step. 
+```
+define service {
+	use			aws-service-CloudFront-Alarm
+	host_name		smartino.test.harvard.edu:cloudwatch-demo-drupal-sitemasterdatabase
+	service_description	ReadIOPS
+	notes			Alarm if hpacdrupaldb ReadIOPs > 100 for 5 minutes (DBInstanceIdentifier = smartino.test.harvard.edu:cloudwatch-demo-drupal-sitemasterdatabase, AlarmName = smartino.test.harvard.edu RDS Read IO, Namespace = AWS/RDS)
+	contact_groups		aws-dev-group
+	check_command		check_AWS_CloudWatch_Alarm!cloudhacks
+}
+```
+The `notes` are completely optional, but very useful when trying to associate this Nagios Service back to the AWS Cloudwatch Alarm and specific Metric and Threshold.
+
+Again here we are overriding the `contact_groups` from the template because we don't want to send alert notifications to prod channels!
+
+Finally, note that the `check_command` parameter includes the name of the `profile` from the `~nagios/.aws/config` file. This is required as an 
+input to the script called by the `check_AWS_CloudWatch_Alarm` command, in order to retrieve the credentials to use when calling the AWS CLI.
+
+This is the Nagios Command definition for `check_AWS_CloudWatch_Alarm`, which can also be found in the config file `checkcommands.cfg` in the 
+[directory of config examples](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/tree/master/Configuration/Examples).
+```
+define command {
+	command_name	check_AWS_CloudWatch_Alarm
+	command_line	$USER1$/FAS/check_AWS_CloudWatch_Alarm.php --hostName $HOSTNAME$ --hostData $_HOSTAWS_DATA$ --serviceDescription $SERVICEDESC$ --profile $ARG1$
+}
+```
+The Nagios Custom Variable `_AWS_Data` is being used in this Nagios Command definition as the value for the command-line argument `--hostData`. 
+(The script `check_AWS_CloudWatch_Alarm.php` can be found in the [directory of scripts](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/tree/master/Code-to-connect-AWS-and-Nagios).)
+
+
+
+### Nagios validation and reload
+
+Now that we have our new Host and Service definitions created, the final two steps are to validate the configuration and reload Nagios to use the new config.
+
+1. On the Nagios server as root, run `service nagios configtest`.
 
 
 
