@@ -332,10 +332,10 @@ In this example, we are again using a Nagios template to inherit parameters that
 Note that the `host_name` is the same as the `host_name` defined in the Host object in the previous step. 
 ```
 define service {
-	use			aws-service-CloudFront-Alarm
-	host_name		smartino.test.harvard.edu:cloudwatch-demo-drupal-sitemasterdatabase
+	use					aws-service-CloudFront-Alarm
+	host_name			smartino.test.harvard.edu:cloudwatch-demo-drupal-sitemasterdatabase
 	service_description	ReadIOPS
-	notes			Alarm if hpacdrupaldb ReadIOPs > 100 for 5 minutes (DBInstanceIdentifier = smartino.test.harvard.edu:cloudwatch-demo-drupal-sitemasterdatabase, AlarmName = smartino.test.harvard.edu RDS Read IO, Namespace = AWS/RDS)
+	notes				Alarm if hpacdrupaldb ReadIOPs > 100 for 5 minutes (DBInstanceIdentifier = smartino.test.harvard.edu:cloudwatch-demo-drupal-sitemasterdatabase, AlarmName = smartino.test.harvard.edu RDS Read IO, Namespace = AWS/RDS)
 	contact_groups		aws-dev-group
 	check_command		check_AWS_CloudWatch_Alarm!cloudhacks
 }
