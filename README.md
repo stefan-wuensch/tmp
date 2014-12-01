@@ -121,8 +121,8 @@ Example: `drupaldb`
 It must be unique across all AWS VPCs and sites that are monitored by HUIT Nagios. 
 The format is: website name as FQDN, with dots (periods) replaced by dashes (hyphens). 
 (AWS does not allow dots in Alarm Names, and the value of `SiteName` in the template is used to construct Alarm Names.) 
-
 Examples:
+
 Public Site Name		| `SiteName` in CloudFormation Template
 ------------------------------- | ------------------------------
 `harvard.edu` 			| `harvard-edu`
