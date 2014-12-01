@@ -123,7 +123,7 @@ The format is: website name as FQDN, with dots (periods) replaced by dashes (hyp
 (AWS does not allow dots in Alarm Names, and the value of `SiteName` in the template is used to construct Alarm Names.) 
 Examples:
 
-Public Site Name		| `SiteName` in CloudFormation Template
+Public Site Name		| SiteName in CloudFormation Template
 ------------------------------- | ------------------------------
 `harvard.edu` 			| `harvard-edu`
 `news.harvard.edu` 		| `news-harvard-edu`
