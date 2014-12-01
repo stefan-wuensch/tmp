@@ -296,9 +296,9 @@ We simply add the name of the site (which was used in Step 8 of creating the tem
 constructed `host_name`:
 ```
 define host {
-	use			aws-host-active-check
-	host_name		smartino.test.harvard.edu:cloudwatch-demo-drupal-sitemasterdatabase
-	_AWS_Data		smartino.test:AWS/RDS:DBInstanceIdentifier
+	use					aws-host-active-check
+	host_name			smartino.test.harvard.edu:cloudwatch-demo-drupal-sitemasterdatabase
+	_AWS_Data			smartino.test:AWS/RDS:DBInstanceIdentifier
 	contact_groups		aws-dev-group
 }
 ```
