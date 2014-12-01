@@ -76,7 +76,7 @@ is one of the simplest. It only contains Alarm configurations for the following 
 - Two EC2 Instances for Drupal webserver nodes
 
 This sample template `online-learning-harvard-edu.json` provides the following **13** CloudWatch Alarm metrics. 
-Each Alarm is created by being defined in the `Resources` section.
+Each Alarm is created by being defined in the `Resources` section of the template.
 
 - EC2 Admin Node `CPUUtilization` as `AdminCPUAlarm`
 - ELB `HealthyHostCount` (absolute minimum) as `ELBHealthyHostLessThanOne`
@@ -104,16 +104,20 @@ http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/rds-metricscol
 which can be found by searching Google for `aws cloudwatch RDS WriteIOPS`
 
 
+**Make a copy of that template `online-learning-harvard-edu.json`. We will use it as the basis for creating a new Stack of CloudWatch Alarms.**
 
-Make a copy of that template `online-learning-harvard-edu.json`. We will use it as the basis for creating a new Stack of CloudWatch Alarms.
 
 #### Parameters
 
-Note that the Default values given in the template are only for convenience and elminiating errors. Each time a CloudFormation Stack is updated, 
-there must be values entered for each of the Parameters. If the Default values in the template are kept current, then creating / updaing the Stack requires 
-very little effort.
+Note that the `Default` values given in the template are only for convenience and elminiating errors. 
 
-The following **eight** Parameters are the only updates needed to your copy of the example template, assuming that the above list of CloudWatch Alarm Metrics are sufficient.
+However, each time a CloudFormation Stack is created or updated there must be values entered for each of the Parameters. 
+If the `Default` values in the template are kept current, then creating / updaing the Stack requires very little effort. 
+It is **highly** recommended that not only are Parameter `Default` values be used, but that they be updated in the template 
+as soon as possible after any termination / re-creation of Resources in the stack being monitored.
+
+The following **eight** Parameters are the only updates needed to your copy of the example template, *assuming that the above list of CloudWatch Alarm Metrics are sufficient*.
+(Creation of CloudWatch Alarms using Metrics other than those already found in the sample `online-learning-harvard-edu.json` is outside the scope of this documentation.)
 
 1. **ElasticLoadBalancer** is the Parameter for the name of the ELB.
 Look in the [AWS Console for Load Balancers](https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LoadBalancers:) and find the full name 
@@ -125,10 +129,20 @@ In the [AWS Console for EC2 Instances](https://console.aws.amazon.com/ec2/v2/hom
 this customer. Enter the **Instance ID** as the Default value in the template.
 Example: `i-f4458015`
 
-3. **AutoScalingGroupMinSize** is the Parameter for minimum number of EC2 web server instances allowed. 
-This value is used to look up thresholds for use in the ELB Healthy Host Count alarm. Search the template for `HealthyHostCountMapByGroupMinimum` 
-to see the mapping of AutoScalingGroupMinSize to the thresholds. 
-XXX
+3. **AutoScalingGroupMinSize** is the Parameter for minimum number of EC2 web server instances allowed. (We are assuming there will be only one web **admin** node.)
+This value is used to look up thresholds in a Mapping for use in the ELB Healthy Host Count alarm. 
+Search the template for `HealthyHostCountMapByGroupMinimum` if you want to see the mapping of AutoScalingGroupMinSize to the thresholds. 
+Optionally see also the [AWS documentation on CloudFormation Mappings in templates](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/mappings-section-structure.html).
+
+To find the correct value for this Parameter, go to the [AWS Console for EC2 Auto Scaling Groups](https://console.aws.amazon.com/ec2/autoscaling/home?region=us-east-1#AutoScalingGroups:view=details). 
+Find the Auto Scaling Group for the customer site, and note the **Min** value for that Group. That is the value to be entered in the template for `AutoScalingGroupMinSize` default.
+
+For example: For the HPAC / HWP site `online-learning.harvard.edu`, the name of the prod Auto Scaling Group is `HPACLearnProd-WebServerGroup-I274WYW1N1MO` and it has a Min value 
+of **2**. When the CloudWatch Alarms Stack is created in CloudFormation, the `AutoScalingGroupMinSize` value of 2 will be used to determine values for `EvaluationPeriods`, `ComparisonOperator`, 
+`ComparisonText`, and `Threshold`. 
+
+Of course, using a Mapping in a template is **completely optional** but by doing so it allows much greater flexibility and scalability. It makes one Parameter value able to 
+populate (in this example) **four** different Resource attributes.
 
 
 4. **MasterDB** is the Parameter for the name of the RDS (database) Instance. Go to the [AWS Console for RDS Instances](https://console.aws.amazon.com/rds/home?region=us-east-1#dbinstances:) 
