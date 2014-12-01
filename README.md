@@ -106,6 +106,7 @@ Example: `arn:aws:sns:us-east-1:014311208322:HUIT_Nagios_Critical`
 **_TO DO_** Find out if any AWS VPC can talk to an existing SNS Topic in another VPC!! If it can, we don't have to create a Topic Stack for every customer!!
 
 6. **DBClass** is the type and size of RDS. The `AllowedValues` should already include all popular types of RDS, but if not simply add to that list. 
+(For a full list of current Instance Classes, see http://aws.amazon.com/rds/details/ or for previous generations see http://aws.amazon.com/rds/previous-generation/) 
 Then from the same [AWS Console for RDS Instances](https://console.aws.amazon.com/rds/home?region=us-east-1#dbinstances:) as in Step 4 find the RDS to be monitored and select (click) it. 
 The value shown for `Instance Class` in the Console is the value to be used for `DBClass` in the template Default.
 Example: `db.m1.small`
@@ -116,7 +117,15 @@ application-layer name of the database. It's this name that database clients use
 use this for the Default in the template. 
 Example: `drupaldb`
 
-
+8. **SiteName** is the Parameter for the name of the public-facing customer website. This value is used to construct Nagios objects. 
+It must be unique across all AWS VPCs and sites that are monitored by HUIT Nagios. 
+The format is: website name as FQDN, with dots (periods) replaced by dashes (hyphens). 
+(AWS does not allow dots in Alarm Names, and the value of `SiteName` in the template is used to construct Alarm Names.) 
+Examples:
+  - site `harvard.edu` 			:arrow_right: `SiteName` `harvard-edu`
+  - site `news.harvard.edu` 		:arrow_right: `SiteName` `news-harvard-edu`
+  - site `campaign.harvard.edu` 	:arrow_right: `SiteName` `campaign-harvard-edu`
+  - site `online-learning.harvard.edu` 	:arrow_right: `SiteName` `online-learning-harvard-edu`
 
 
 
