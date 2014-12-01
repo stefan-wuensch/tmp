@@ -364,9 +364,12 @@ The Nagios Custom Variable `_AWS_Data` is being used in this Nagios Command defi
 
 Now that we have our new Host and Service definitions created, the final two steps are to validate the configuration and reload Nagios to use the new config.
 
-1. On the Nagios server as root, run `service nagios configtest`. You can ignore the warnings about "Extinfo objects are deprecated" which are coming from 
-old Nagios version 2 definitions which will be converted to Nagios 4 definitions at a later date. 
+1. On the Nagios server as root, run `service nagios configtest`. 
+
+  You can ignore the warnings about "Extinfo objects are deprecated" which are coming from old Nagios version 2 definitions which will be converted to Nagios 4 definitions at a later date. 
+
   To cut down on the warning output, you could instead run `service nagios configtest | grep -v "WARNING: Extinfo objects are deprecated"`
+
   As long as you see the following all-clear, you're all set:
   ```
   Total Warnings: 0
