@@ -204,7 +204,17 @@ Public Site Name		| SiteName in CloudFormation Template
 
 Now that the new CloudFormation template is complete, creating the Stack of Alarms is very easy!
 
-Go to the [AWS Console for CloudFormation](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks?filter=active).
+1. Go to the [AWS Console for CloudFormation](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks?filter=active).
+
+2. Perform a **Create Stack** operation, and name the new stack as explicitly / specifically as possible.
+
+  For the Template, use the option `Upload a template to Amazon S3` and "Browse" to your newly-created template from above.
+  
+3. Verify that the Default Parameters are correct, or update as needed.
+
+4. Skip adding any Tags at this time. (Tags can be used to add additional metadata to the Stack. See [the docs](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html) for more.)
+
+5. For the final step, verify the Template, Parameters and Options and if all looks good click **Create**. (The default Options are fine.)
 
 
 
