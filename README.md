@@ -264,8 +264,8 @@ define command {
 That command definition is used by the AWS Host template in Nagios:
 ```
 define host {
-	name				aws-host-active-check
-	use					generic-host
+	name					aws-host-active-check
+	use						generic-host
 	contact_groups			aws-critical-group
 	check_command			FAKE-host-alive
 	register				0
