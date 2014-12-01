@@ -151,7 +151,8 @@ and find the RDS Instance for this customer's application. Fill in the name of t
 5. **CriticalAlarmTopic** is the name of the SNS Topic which will send alarm notifications to Nagios. This topic name needs to be looked up in 
 the [AWS Console for SNS](https://console.aws.amazon.com/sns/) after the Topics Stack has been created. 
 Example: `arn:aws:sns:us-east-1:014311208322:HUIT_Nagios_Critical` 
-**_TO DO_** Find out if any AWS VPC can talk to an existing SNS Topic in another VPC!! If it can, we don't have to create a Topic Stack for every customer!!
+
+  **_TO DO_** Find out if any AWS VPC can talk to an existing SNS Topic in another VPC!! If it can, we don't have to create a Topic Stack for every customer!!
 
 6. **DBClass** is the type and size of RDS. The `AllowedValues` should already include all popular types of RDS, but if not simply add to that list. 
 (For a full list of current Instance Classes, see http://aws.amazon.com/rds/details/ or for previous generations see http://aws.amazon.com/rds/previous-generation/) 
