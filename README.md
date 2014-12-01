@@ -378,6 +378,33 @@ Now that we have our new Host and Service definitions created, the final two ste
   Total Errors:   0
   ```
 
+2. Perform a configuration reload by running as root: 
+  
+  `service nagios reload`
+  
+Now you can go to the Nagios UI and see your newly-created Host and Service. 
+
+In this example since the Host Name is `smartino.test.harvard.edu:cloudwatch-demo-drupal-sitemasterdatabase` we can search 
+for that in the "**Quick Search:**" box. Go to https://nagios.huit.harvard.edu/nagios/ and enter that Host Name.
+
+
+
+## Testing CloudWatch Alarms and Nagios
+
+The AWS CLI can be used to change the state of a CloudWatch Alarm to create a notification test. The command is 
+`aws cloudwatch set-alarm-state`
+
+Using the example configurations from above, we need to supply the AWS CLI with the following parameters:
+
+1. `--alarm-name` (which is the name in CloudWatch not Nagios)
+2. `--state-reason` - some text message explaining that it's a test
+3. `--state-value` - can be `ALARM` or `OK` or `INSUFFICIENT_DATA`
+4. `--profile` for the particular VPC, to get the AWS CLI credentials
+
+A complete test command line for the example CloudWatch Alarm and Nagios Host and Service created above looks like:
+
+`aws cloudwatch set-alarm-state --alarm-name "smartino-test-harvard-edu RDS Read IO" --state-reason "Nagios TEST ONLY - please disregard this test - setting AWS alarm to ALARM" --state-value ALARM --profile cloudhacks`
+
 
 
 
