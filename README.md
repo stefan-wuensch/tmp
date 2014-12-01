@@ -368,7 +368,9 @@ Now that we have our new Host and Service definitions created, the final two ste
 
   You can ignore the warnings about "Extinfo objects are deprecated" which are coming from old Nagios version 2 definitions which will be converted to Nagios 4 definitions at a later date. 
 
-  To cut down on the warning output, you could instead run `service nagios configtest | grep -v "WARNING: Extinfo objects are deprecated"`
+  To cut down on the warning output, you could instead run: 
+  
+  `service nagios configtest | grep -v "WARNING: Extinfo objects are deprecated"`
 
   As long as you see the following all-clear, you're all set:
   ```
