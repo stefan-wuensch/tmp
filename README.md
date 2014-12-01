@@ -216,10 +216,13 @@ Now that the new CloudFormation template is complete, creating the Stack of Alar
 
 5. For the final step, verify the Template, Parameters and Options and if all looks good click **Create**. (The default Options are fine.)
 
+The Stack creation will take (typically) between 30 and 90 sec. depending on how many Resources are to be created. 
 
+Once the stack creation is complete, examine the [CloudWatch Alarms Console](https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#alarm:alarmFilter=ANY) 
+and verify the new Alarms. The names should start with the `SiteName` specified in Step 8 above. 
 
-
-
+Typically the **only** Alarms that will show an *INSUFFICIENT_DATA* state are Load Balancer 4XX and 5XX counts (`HTTPCode_ELB_4XX` and/or `HTTPCode_ELB_5XX`). 
+Any other *INSUFFICIENT_DATA* state should be examined. There may be an incorrect Parameter given in the template Default or given at the time of stack creation.
 
 
 
