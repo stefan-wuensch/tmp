@@ -272,11 +272,43 @@ For more on Nagios templates see http://nagios.sourceforge.net/docs/nagioscore/4
 
 
 
+### Host Configuration
+
+For this example we will configure a Nagios "Host" which represents an AWS RDS instance. 
+
+A demo Drupal site stack has been set up in advance, and we have already created an Alarm stack template as 
+shown above, and created that stack. 
+
+We know from the template (and from looking at the AWS Console for RDS) that the DB Instance Name is 
+`cloudwatch-demo-drupal-sitemasterdatabase`. That becomes the basis for the Nagios "Host" name, but it needs more than that.
+
+Nagios Host names **must be unique** across the entire Nagios namespace. Since a particular customer might have 
+multiple websites each of which has the same DB Instance Name we need to add something additional to make 
+the Host Name unique. 
+
+We simply add the name of the site (which was used in Step 8 of creating the template above) to give us a 
+constructed `host_name`:
+```
+define host {
+	use			aws-host-active-check
+	host_name		smartino.test.harvard.edu:cloudwatch-demo-drupal-sitemasterdatabase
+	_AWS_Data		smartino.test:AWS/RDS:DBInstanceIdentifier
+	contact_groups		aws-dev-group
+}
+```
+The `use` parameter inherits from the host template as shown earlier. 
+
+Notes:
+
+1. The `_AWS_Data` parameter is a [custom variable](http://nagios.sourceforge.net/docs/nagioscore/4/en/macros.html) 
+which would be used by the automation scripts. It is not needed in this non-automated example, but it's included 
+for completeness. 
+2. The `contact_groups` parameter is overriding the `contact_groups` parameter from the `aws-host-active-check` template. 
+Since the template is designed for production use (with the Contact Group `aws-critical-group`) we don't want to 
+be sending critical alerts through the prod notification channels for this test example!
 
 
 
-
-### Host 
 
 
 
