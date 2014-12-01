@@ -402,8 +402,9 @@ Using the example configurations from above, we need to supply the AWS CLI with 
 4. `--profile` for the particular VPC, to get the AWS CLI credentials
 
 A complete test command line for the example CloudWatch Alarm and Nagios Host and Service created above looks like:
-
-`aws cloudwatch set-alarm-state --alarm-name "smartino-test-harvard-edu RDS Read IO" --state-reason "Nagios TEST ONLY - please disregard this test - setting AWS alarm to ALARM" --state-value ALARM --profile cloudhacks`
+```
+aws cloudwatch set-alarm-state --alarm-name "smartino-test-harvard-edu RDS Read IO" --state-reason "Nagios TEST ONLY - please disregard this test - setting AWS alarm to ALARM" --state-value ALARM --profile cloudhacks
+```
 
 
 
