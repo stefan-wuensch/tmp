@@ -68,20 +68,52 @@ Harvard Publishing and Communications (HPAC) and Harvard Web Publishing (HWP).
 
 Specifically, the template 
 [online-learning-harvard-edu.json](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/JSON-Templates/online-learning-harvard-edu.json) 
-is one of the simplest. It only contains Alarm configurations for:
+is one of the simplest. It only contains Alarm configurations for the following types and quantities of AWS resources:
 
 - One ELB (Elastic Load Balancer)
 - One RDS (Relational Database Service)
 - One EC2 Instance for a Drupal admin node
 - Two EC2 Instances for Drupal webserver nodes
 
-Make a copy of that template. We will use it as the basis for creating a new Stack of CloudWatch Alarms.
+This sample template `online-learning-harvard-edu.json` provides the following **13** CloudWatch Alarm metrics. 
+Each Alarm is created by being defined in the `Resources` section.
+
+- EC2 Admin Node `CPUUtilization` as `AdminCPUAlarm`
+- ELB `HealthyHostCount` (absolute minimum) as `ELBHealthyHostLessThanOne`
+- ELB `HealthyHostCount` (based on Auto Scaling Group minimum) as `ELBHealthyHost`
+- ELB `RequestCount` as `ELBRequestCount`
+- ELB `Latency` as `ELBLatencyAlarm`
+- ELB `HTTPCode_ELB_5XX` as `ELB5XXAlarm`
+- ELB `HTTPCode_ELB_4XX` as `ELB4XXAlarm`
+- RDS `CPUUtilization` as `RDSCPUHighAlarm`
+- RDS `FreeStorageSpace` as `RDSFreeStorageSpaceAlarm`
+- RDS `ReadIOPS` as `RDSReadIOPSHighAlarm`
+- RDS `WriteIOPS` as `RDSWriteIOPSHigh`
+- RDS `ReadLatency` as `RDSreadLatency`
+- RDS `WriteLatency` as `RDSwriteLatency`
+
+All of the above CloudWatch Metrics (the left-hand attribute) are documented by Amazon online. A Google search for `aws cloudwatch` 
+plus the name of the resource type and the Metric should take you right to that documentation.
+
+For example: The ELB Metric `HTTPCode_ELB_4XX` is described (along with all the other ELB Metrics) at 
+http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_MonitoringLoadBalancerWithCW.html 
+which can be found by searching Google for `aws cloudwatch ELB HTTPCode_ELB_4XX`
+
+Another example: The RDS Metric `WriteIOPS` is documented at 
+http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/rds-metricscollected.html 
+which can be found by searching Google for `aws cloudwatch RDS WriteIOPS`
+
+
+
+Make a copy of that template `online-learning-harvard-edu.json`. We will use it as the basis for creating a new Stack of CloudWatch Alarms.
 
 #### Parameters
 
 Note that the Default values given in the template are only for convenience and elminiating errors. Each time a CloudFormation Stack is updated, 
 there must be values entered for each of the Parameters. If the Default values in the template are kept current, then creating / updaing the Stack requires 
 very little effort.
+
+The following **eight** Parameters are the only updates needed to your copy of the example template, assuming that the above list of CloudWatch Alarm Metrics are sufficient.
 
 1. **ElasticLoadBalancer** is the Parameter for the name of the ELB.
 Look in the [AWS Console for Load Balancers](https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LoadBalancers:) and find the full name 
@@ -96,6 +128,8 @@ Example: `i-f4458015`
 3. **AutoScalingGroupMinSize** is the Parameter for minimum number of EC2 web server instances allowed. 
 This value is used to look up thresholds for use in the ELB Healthy Host Count alarm. Search the template for `HealthyHostCountMapByGroupMinimum` 
 to see the mapping of AutoScalingGroupMinSize to the thresholds. 
+XXX
+
 
 4. **MasterDB** is the Parameter for the name of the RDS (database) Instance. Go to the [AWS Console for RDS Instances](https://console.aws.amazon.com/rds/home?region=us-east-1#dbinstances:) 
 and find the RDS Instance for this customer's application. Fill in the name of the Instance as this Default. Example: `hdxmrpsfnzbr5v`
