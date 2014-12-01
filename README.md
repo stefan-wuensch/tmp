@@ -59,7 +59,7 @@ for the specifics.
 nor Nagios configuration files nor scripts. However, the use of Github for centralized storage is assumed.
 
 
-## Getting Started
+## Getting Started with AWS
 
 ### Start with an existing CloudFormation Template as a guide
 
@@ -212,7 +212,8 @@ Now that the new CloudFormation template is complete, creating the Stack of Alar
   
 3. Verify that the Default Parameters are correct, or update as needed.
 
-4. Skip adding any Tags at this time. (Tags can be used to add additional metadata to the Stack. See [the docs](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html) for more.)
+4. Skip adding any Tags at this time. (Tags can be used to add additional metadata to the Stack. 
+See [the docs](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html) for more.)
 
 5. For the final step, verify the Template, Parameters and Options and if all looks good click **Create**. (The default Options are fine.)
 
@@ -225,6 +226,57 @@ Typically the **only** Alarms that will show an *INSUFFICIENT_DATA* state are Lo
 Any other *INSUFFICIENT_DATA* state should be examined. There may be an incorrect Parameter given in the template Default or given at the time of stack creation.
 
 
+
+
+## Nagios configuration
+
+Note: For this example, we will be manually configuring one Nagios Host and one Nagios Service. As of this writing (2014-11-30) 
+the custom auto-configuration mechanisms need to be updated / fixed to allow for multiple customers with different AWS VPCs.
+At the moment the HPAC / HWP sites are the only ones that work with auto-configuration due to some code issues.
+
+
+### Overview of Nagios configuration
+
+The Nagios "Host" object typically represents a conventional host, such as a server (physical or virtual) or a VIP on a load balancer. 
+With AWS, the traditional concept of the "host" is replaced by Instances of various resource types (EC2, RDS, ELB, etc.) so we have to 
+change the way we think of a Nagios "Host".
+
+For AWS montitoring with Nagios, the Host object now becomes simply a root object to which we associate Service objects. 
+
+For example: an RDS instance being monitored by CloudWatch isn't a true "host" because we don't know (nor do we care) how 
+Amazon is actually hosting the database service. Since it won't matter if a "host" in this model is "up" or "down" - 
+and we probably won't be able to tell anyway - we use a special Host `check_command` which **always** returns `OK`.
+
+This is taken from the standard Nagios `checkcommands.cfg` file:
+```
+define command {
+	command_name	FAKE-host-alive
+	command_line	$USER1$/check_dummy 0 "Fake Alive Place-Holder"
+}
+```
+
+That command definition is used by the AWS Host template in Nagios:
+```
+define host {
+	name				aws-host-active-check
+	use				generic-host
+	contact_groups			aws-critical-group
+	check_command			FAKE-host-alive
+	register			0
+}
+```
+(Note that Nagios templates are simply a way of allowing related objects to inherit from a common config definition. 
+For more on Nagios templates see http://nagios.sourceforge.net/docs/nagioscore/4/en/objectinheritance.html)
+
+
+
+
+
+
+
+
+
+### Host 
 
 
 
