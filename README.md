@@ -107,7 +107,7 @@ which can be found by searching Google for `aws cloudwatch RDS WriteIOPS`
 **Make a copy of that template `online-learning-harvard-edu.json`. We will use it as the basis for creating a new Stack of CloudWatch Alarms.**
 
 
-#### Parameters
+### Parameters
 
 Note that the `Default` values given in the template are only for convenience and elminiating errors. 
 
@@ -118,6 +118,25 @@ as soon as possible after any termination / re-creation of Resources in the stac
 
 The following **eight** Parameters are the only updates needed to your copy of the example template, *assuming that the above list of CloudWatch Alarm Metrics are sufficient*.
 (Creation of CloudWatch Alarms using Metrics other than those already found in the sample `online-learning-harvard-edu.json` is outside the scope of this documentation.)
+
+**Also note** that if the customer has provisioned their site Stack with *either* creation Parameters or **Outputs** which contain some or all of the following eight 
+CloudWatch Stack Parameters, or if Stack Resources show usable resource IDs, you may be able to simply view those values from the 
+[AWS Console for CloudFormation](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks?filter=active) 
+in order to fill in the following Parameters. 
+
+Example of using Outputs to find Alarm Stack Parameters: 
+In the production HWP [HPAC online-learning.harvard.edu stack](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks?filter=active&stackId=arn:aws:cloudformation:us-east-1:014311208322:stack%2FHPACLearnProd%2Fe619b710-1d58-11e4-b2d5-50e241629418&tab=outputs) 
+there is an Output `ElasticLoadBalancerName` as well as `RDSInstanceName`. These are the two values needed for Step 1 and Step 4 respectively.
+
+Example of using Resources to find Alarm Stack Parameters:
+The production HWP [HPAC online-learning.harvard.edu](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks?filter=active&stackId=arn:aws:cloudformation:us-east-1:014311208322:stack%2FHPACLearnProd%2Fe619b710-1d58-11e4-b2d5-50e241629418&tab=resources) 
+shows a "Logical ID" `DBInstance` with "Physical ID" `hdxmrpsfnzbr5v`. This is the same as the Output named `RDSInstanceName`, and either of these is what's needed in Step 4.
+
+The two examples above illustrate that you *might* be able to find needed values for the Alarms Stack by simply viewing the customer site stack. However, 
+since that it not guaranteed to be the case, the below instructions reference the more specific AWS Console views.
+
+
+#### Filling in the Default values
 
 1. **ElasticLoadBalancer** is the Parameter for the name of the ELB.
 Look in the [AWS Console for Load Balancers](https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LoadBalancers:) and find the full name 
@@ -180,6 +199,12 @@ Public Site Name		| SiteName in CloudFormation Template
 `online-learning.harvard.edu` 	| `online-learning-harvard-edu`
 
 
+
+### Create the new CloudWatch Alarms Stack
+
+Now that the new CloudFormation template is complete, creating the Stack of Alarms is very easy!
+
+Go to the [AWS Console for CloudFormation](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks?filter=active).
 
 
 
