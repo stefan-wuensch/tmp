@@ -134,15 +134,15 @@ This value is used to look up thresholds in a Mapping for use in the ELB Healthy
 Search the template for `HealthyHostCountMapByGroupMinimum` if you want to see the mapping of AutoScalingGroupMinSize to the thresholds. 
 Optionally see also the [AWS documentation on CloudFormation Mappings in templates](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/mappings-section-structure.html).
 
-To find the correct value for this Parameter, go to the [AWS Console for EC2 Auto Scaling Groups](https://console.aws.amazon.com/ec2/autoscaling/home?region=us-east-1#AutoScalingGroups:view=details). 
-Find the Auto Scaling Group for the customer site, and note the **Min** value for that Group. That is the value to be entered in the template for `AutoScalingGroupMinSize` default.
+  To find the correct value for this Parameter, go to the [AWS Console for EC2 Auto Scaling Groups](https://console.aws.amazon.com/ec2/autoscaling/home?region=us-east-1#AutoScalingGroups:view=details). 
+  Find the Auto Scaling Group for the customer site, and note the **Min** value for that Group. That is the value to be entered in the template for `AutoScalingGroupMinSize` default.
 
-For example: For the HPAC / HWP site `online-learning.harvard.edu`, the name of the prod Auto Scaling Group is `HPACLearnProd-WebServerGroup-I274WYW1N1MO` and it has a Min value 
-of **2**. When the CloudWatch Alarms Stack is created in CloudFormation, the `AutoScalingGroupMinSize` value of 2 will be used to determine values for `EvaluationPeriods`, `ComparisonOperator`, 
-`ComparisonText`, and `Threshold`. 
+  For example: For the HPAC / HWP site `online-learning.harvard.edu`, the name of the prod Auto Scaling Group is `HPACLearnProd-WebServerGroup-I274WYW1N1MO` and it has a Min value 
+  of **2**. When the CloudWatch Alarms Stack is created in CloudFormation, the `AutoScalingGroupMinSize` value of 2 will be used to determine values for `EvaluationPeriods`, `ComparisonOperator`, 
+  `ComparisonText`, and `Threshold`. 
 
-Of course, using a Mapping in a template is **completely optional** but by doing so it allows much greater flexibility and scalability. It makes one Parameter value able to 
-populate (in this example) **four** different Resource attributes.
+  Of course, using a Mapping in a template is **completely optional** but by doing so it allows much greater flexibility and scalability. It makes one Parameter value able to 
+  populate (in this example) **four** different Resource attributes.
 
 
 4. **MasterDB** is the Parameter for the name of the RDS (database) Instance. Go to the [AWS Console for RDS Instances](https://console.aws.amazon.com/rds/home?region=us-east-1#dbinstances:) 
