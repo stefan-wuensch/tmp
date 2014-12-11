@@ -54,7 +54,10 @@ Record the Topic ARN:
 
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/sns-topic-2.png)
 
-
+You can identify the correct SNS Topic by making sure the Endpoint URL is production Nagios, either:<br>
+https://nagios.fas.harvard.edu/aws_sns_receiver.php<br>
+or<br>
+https://nagios.huit.harvard.edu/aws_sns_receiver.php
 
 
 
