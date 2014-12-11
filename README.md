@@ -23,7 +23,7 @@ the Instance name makes it easy: `HPACNewsProd Web Admin Server`
 
 The `Instance ID` is in the format `i-abcd1234` (letter 'i', dash, and eight random alphanumeric characters).
 
-In this example the Instance ID is `i-97da517d`. Write that down!
+In this example the Instance ID is `i-97da517d`. Save that for later!
 
 
 
@@ -37,12 +37,19 @@ https://console.aws.amazon.com/ec2/autoscaling/home?region=us-east-1#AutoScaling
 Find the name of the site:
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/auto-scaling-min.png)
 
-Write down the Min value for that group:
+Take down the Min value for that group:
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/auto-scaling-min-2.png)
 
 
 
 ### 3. **CriticalAlarmTopic**
+
+This is the SNS Topic Name for getting the Alarm state to Nagios. 
+
+Go to https://console.aws.amazon.com/sns/home?region=us-east-1# and expand the list of Topics:
+
+![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/sns-topic-1.png)
+
 
 
 
