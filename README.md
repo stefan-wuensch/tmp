@@ -50,6 +50,10 @@ Go to https://console.aws.amazon.com/sns/home?region=us-east-1# and expand the l
 
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/sns-topic-1.png)
 
+Record the Topic ARN:
+
+![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/sns-topic-2.png)
+
 
 
 
