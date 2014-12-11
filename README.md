@@ -19,7 +19,7 @@ Start at https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#Instances:s
 Depending on how the site owner has set up the stack, the name may be easy to find or not easy at all. In this example 
 the Instance name makes it easy: `HPACNewsProd Web Admin Server`
 
-![](https://raw.githubusercontent.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/master/Documentation/Images/admin_node.png)
+![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/admin_node.png)
 
 The `Instance ID` is in the format `i-abcd1234` (letter 'i', dash, and eight random alphanumeric characters).
 
