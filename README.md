@@ -18,12 +18,11 @@ Start at https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#Instances:s
 
 Depending on how the site owner has set up the stack, the name may be easy to find or not easy at all. In this example 
 the Instance name makes it easy: `HPACNewsProd Web Admin Server`
-
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/admin_node.png)
 
 The `Instance ID` is in the format `i-abcd1234` (letter 'i', dash, and eight random alphanumeric characters).
 
-In this example the Instance ID is `i-97da517d`. Save that for later!
+In this example the Instance ID is `i-97da517d`. **Save that for later!**
 
 
 
@@ -37,8 +36,9 @@ https://console.aws.amazon.com/ec2/autoscaling/home?region=us-east-1#AutoScaling
 Find the name of the site:
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/auto-scaling-min.png)
 
-Take down the Min value for that group:
+**Take down the Min value for that group:**
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/auto-scaling-min-2.png)
+
 
 
 
@@ -47,17 +47,17 @@ Take down the Min value for that group:
 This is the SNS Topic Name for getting the Alarm state to Nagios. 
 
 Go to https://console.aws.amazon.com/sns/home?region=us-east-1# and expand the list of Topics:
-
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/sns-topic-1.png)
-
-Record the Topic ARN:
-
-![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/sns-topic-2.png)
 
 You can identify the correct SNS Topic by making sure the Endpoint URL is production Nagios, either:<br>
 https://nagios.fas.harvard.edu/aws_sns_receiver.php<br>
 or<br>
 https://nagios.huit.harvard.edu/aws_sns_receiver.php
+
+**Record the Topic ARN:**
+![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/sns-topic-2.png)
+
+In this example, it's `arn:aws:sns:us-east-1:014311208322:HUIT_Nagios_Critical`
 
 
 
@@ -66,7 +66,6 @@ https://nagios.huit.harvard.edu/aws_sns_receiver.php
 This is the Database Instance Class. 
 
 Go to the RDS Dashboard list of Instances: https://console.aws.amazon.com/rds/home?region=us-east-1#dbinstances:
-
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/rds-1.png)
 
 It can be tricky to figure out which RDS Instance is the one we want, so if you can't tell which one it is we'll look 
@@ -76,11 +75,14 @@ In a new browser tab or window, go to CloudFormation Stacks: https://console.aws
 
 Seclect the site stack, go to **Resources** and you will find `DBInstance` in the **Logical ID** column. Copy the **Physical ID** for that DBInstance 
 (in this example `hdjhee21ma2vq6`):
-
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/rds-2.png)
 
+Now that we know the DB Instance ID, go back to the other browser tab / window and find that ID on the page:
+![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/rds-3.png)
 
+**Take down the value shown in the Class column for that DB Instance.**
 
+In this example it's `db.m3.large`
 
 
 
