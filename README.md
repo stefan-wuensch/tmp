@@ -10,7 +10,7 @@ https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/
 The following Parameter values need to be collected from the web site Stack that is to be monitored.
 
 
-## 1. **AdminNode**
+### 1. **AdminNode**
 
 This is the EC2 Instance ID of the Web Admin Node for the site. 
 
@@ -27,7 +27,7 @@ In this example the Instance ID is `i-97da517d`. Write that down!
 
 
 
-2. **AutoScalingGroupMinSize**
+### 2. **AutoScalingGroupMinSize**
 
 This is the minimum number of EC2 Instances the site will have. 
 
@@ -39,6 +39,12 @@ Find the name of the site:
 
 Write down the Min value for that group:
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/auto-scaling-min-2.png)
+
+
+
+### 3. **CriticalAlarmTopic**
+
+
 
 
 
