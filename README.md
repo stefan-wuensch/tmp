@@ -27,6 +27,20 @@ In this example the Instance ID is `i-97da517d`. Write that down!
 
 
 
+2. **AutoScalingGroupMinSize**
+
+This is the minimum number of EC2 Instances the site will have. 
+
+Go to EC2 Auto Scaling Groups: 
+https://console.aws.amazon.com/ec2/autoscaling/home?region=us-east-1#AutoScalingGroups:view=details
+
+Find the name of the site:
+![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/auto-scaling-min.png)
+
+Write down the Min value for that group:
+![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/auto-scaling-min-2.png)
+
+
 
 
 
