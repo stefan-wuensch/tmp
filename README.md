@@ -61,6 +61,26 @@ https://nagios.huit.harvard.edu/aws_sns_receiver.php
 
 
 
+### 4. **DBClass**
+
+This is the Database Instance Class. 
+
+Go to the RDS Dashboard list of Instances: https://console.aws.amazon.com/rds/home?region=us-east-1#dbinstances:
+
+![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/rds-1.png)
+
+It can be tricky to figure out which RDS Instance is the one we want, so if you can't tell which one it is we'll look 
+at the site Stack for help. 
+
+In a new browser tab or window, go to CloudFormation Stacks: https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks?filter=active
+
+Seclect the site stack, go to **Resources** and you will find `DBInstance` in the **Logical ID** column. Copy the **Physical ID** for that DBInstance 
+(in this example `hdjhee21ma2vq6`):
+
+![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/rds-2.png)
+
+
+
 
 
 
