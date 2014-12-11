@@ -2,3 +2,42 @@ This file README.md is a step-by-step guide to setting up AWS CloudWatch Alarms 
 
 This is a high-level tutorial, designed to be only what you need to get started. For detailed information, see
 https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Detailed_Tutorial.md
+
+
+
+# Gathering Parameters
+
+The following Parameter values need to be collected from the web site Stack that is to be monitored.
+
+
+1. _AdminNode_
+
+This is the EC2 Instance ID of the Web Admin Node for the site. 
+
+Start at https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#Instances:sort=tag:Name
+
+Depending on how the site owner has set up the stack, the name may be easy to find or not easy at all. In this example 
+the Instance name makes it easy: `HPACNewsProd Web Admin Server`
+
+![](https://raw.githubusercontent.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/master/Documentation/Images/admin_node.png)
+
+The `Instance ID` is in the format `i-abcd1234` (letter 'i', dash, and eight random alphanumeric characters).
+
+In this example the Instance ID is `i-97da517d`. Write that down!
+
+
+
+
+
+
+
+
+# Starting the Alarms Stack
+
+
+# Configuring Nagios
+
+
+# Testing
+
+
