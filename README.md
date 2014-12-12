@@ -79,15 +79,16 @@ In a new browser tab or window, go to CloudFormation Stacks:
 
 https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks?filter=active
 
-Seclect the site stack, go to **Resources** and you will find `DBInstance` in the **Logical ID** column. Copy the **Physical ID** for that DBInstance 
+Select the site stack, go to **Resources** and you will find `DBInstance` in the **Logical ID** column. Copy the **Physical ID** for that DBInstance 
 (in this example `hdjhee21ma2vq6`):
 
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/rds-2.png)
 
 Now that we know the DB Instance ID, go back to the other browser tab / window and find that ID on the page:
+
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/rds-3.png)
 
-**Take down the value shown in the Class column for that DB Instance.**
+**Copy the value shown in the Class column for that DB Instance.**
 
 In this example it's `db.m3.large`
 
