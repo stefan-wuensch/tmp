@@ -1,4 +1,4 @@
-This file README.md is a step-by-step guide to setting up AWS CloudWatch Alarms that can be integrated with Nagios.
+This file **README.md** is a step-by-step guide to setting up AWS CloudWatch Alarms that can be integrated with Nagios.
 
 This is a high-level tutorial, designed to be only what you need to get started. For detailed information, see
 https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Detailed_Tutorial.md
@@ -69,15 +69,19 @@ In this example, it's `arn:aws:sns:us-east-1:014311208322:HUIT_Nagios_Critical`
 This is the Database Instance Class. 
 
 Go to the RDS Dashboard list of Instances: https://console.aws.amazon.com/rds/home?region=us-east-1#dbinstances:
+
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/rds-1.png)
 
 It can be tricky to figure out which RDS Instance is the one we want, so if you can't tell which one it is we'll look 
 at the site Stack for help. 
 
-In a new browser tab or window, go to CloudFormation Stacks: https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks?filter=active
+In a new browser tab or window, go to CloudFormation Stacks: 
+
+https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks?filter=active
 
 Seclect the site stack, go to **Resources** and you will find `DBInstance` in the **Logical ID** column. Copy the **Physical ID** for that DBInstance 
 (in this example `hdjhee21ma2vq6`):
+
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/rds-2.png)
 
 Now that we know the DB Instance ID, go back to the other browser tab / window and find that ID on the page:
