@@ -118,6 +118,8 @@ This is the application-layer database name.
 
 Since we have already identified which RDS Instance is the correct one (in step #4 above), we now know where to find the name of the database.
 
+Again for this example our MasterDB is `hdjhee21ma2vq6`.
+
 Select (click) that RDS Instance. The full detail for that RDS Instance will be shown.
 
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/rds-4.png)
