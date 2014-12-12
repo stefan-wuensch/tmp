@@ -261,9 +261,42 @@ After a few minutes your new Stack should go from `CREATE_IN_PROGRESS` to `CREAT
 
 
 
+### 3. View your new CloudWatch Alarms
+
+You can now view the results of your new Stack of CloudWatch Alarms.
+
+Go to the AWS Console for CloudWatch: <br>
+https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#alarm:alarmFilter=ANY
+
+The name you gave as the `SiteName` will preface each new CloudWatch Alarm name. 
+
+
+
 
 
 # Configuring Nagios
+
+
+### 1. Create Nagios Host objects
+
+
+
+
+### 2. Create Nagios Service objects
+
+
+
+### 3. Test the Nagios configuration
+
+
+
+### 4. Reload the Nagios configuration
+
+
+
+
+
+
 
 
 # Testing
