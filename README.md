@@ -125,13 +125,28 @@ In this example it's `wordpressdb`
 
 
 
+
 ### 7. **ElasticLoadBalancer**
 
 This is the name of the ELB (Elastic Load Balancer).
 
-Go to the EC2 Dashboard section on **Load Balancers**:
-
+Go to the EC2 Dashboard section on **Load Balancers**: <br>
 https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LoadBalancers:
+
+Finding the correct ELB can be difficult, just like finding the correct RDS in Step 4. 
+
+Just as with Step 4: if you can't easily figure out which ELB is the right one, refer to the site Stack.
+
+**In a new browser tab or window**, go to CloudFormation Stacks: <br>
+https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks?filter=active <br>
+(Of course if you kept the browser tab or window open from Step 4 you can just switch back to it.)
+
+Select the site stack, go to **Resources** and you will find `ElasticLoadBalancer` in the _Logical ID_ column. 
+
+![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/elb-1.png)
+
+**Copy the _Physical ID_ for that ElasticLoadBalancer** (in this example `HPACNewsP-ElasticL-KUWSX4IQHDSD`).
+
 
 
 
