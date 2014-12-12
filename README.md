@@ -71,9 +71,9 @@ Go to https://console.aws.amazon.com/sns/home?region=us-east-1# and expand the l
 Select the Topic that refers to **HUIT Nagios Critical**.
 
 You can confirm that this is the correct SNS Topic by making sure the Endpoint URL is production Nagios, either:<br>
-https://nagios.fas.harvard.edu/aws_sns_receiver.php<br>
+`https://nagios.fas.harvard.edu/aws_sns_receiver.php`<br>
 or<br>
-https://nagios.huit.harvard.edu/aws_sns_receiver.php
+`https://nagios.huit.harvard.edu/aws_sns_receiver.php`
 
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/sns-topic-2.png)
 
