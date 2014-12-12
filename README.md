@@ -72,7 +72,8 @@ In this example, it's `arn:aws:sns:us-east-1:014311208322:HUIT_Nagios_Critical`
 
 This is the RDS Instance ID.
 
-Go to the RDS Dashboard list of Instances: https://console.aws.amazon.com/rds/home?region=us-east-1#dbinstances:
+Go to the RDS Dashboard list of Instances: <br>
+https://console.aws.amazon.com/rds/home?region=us-east-1#dbinstances:
 
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/rds-1.png)
 
@@ -110,11 +111,11 @@ In this example it's `db.m3.large`
 
 ### 6. **DBName**
 
-`DBName` is the application-layer database name. 
+This is the application-layer database name. 
 
 Since we have already identified which RDS Instance is the correct one (in step #4 above), we now know where to find the name of the database.
 
-Select that RDS Instance. The full detail for that RDS Instance will be shown.
+Select (click) that RDS Instance. The full detail for that RDS Instance will be shown.
 
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/rds-4.png)
 
@@ -122,6 +123,16 @@ Select that RDS Instance. The full detail for that RDS Instance will be shown.
 
 In this example it's `wordpressdb`
 
+
+
+
+### 7. **ElasticLoadBalancer**
+
+This is the name of the ELB (Elastic Load Balancer).
+
+Go to the EC2 Dashboard section on **Load Balancers**:
+
+https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LoadBalancers:
 
 
 
