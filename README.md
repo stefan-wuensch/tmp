@@ -197,6 +197,8 @@ In your favorite editor, **open your copy of the template**.
 
 Each one of the eight Parameters you collected earlier will be entered as a **Default** in your new template.
 
+![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/template-1.png)
+
 For example: using the Parameter values from the examples above, the first four Parameters in your new template would look like this:
 ```
   "Parameters" : {
