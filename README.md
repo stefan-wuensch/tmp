@@ -27,6 +27,7 @@ In this example the Instance ID is `i-97da517d`. **Save that for later!**
 
 
 
+
 ### 2. **AutoScalingGroupMinSize**
 
 This is the minimum number of EC2 Instances the site will have. 
@@ -40,6 +41,7 @@ Find the name of the site:
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/auto-scaling-min-2.png)
 
 **Jot down the Min value for that group.** In this case, it's 6.
+
 
 
 
@@ -64,33 +66,62 @@ In this example, it's `arn:aws:sns:us-east-1:014311208322:HUIT_Nagios_Critical`
 
 
 
-### 4. **DBClass**
 
-This is the Database Instance Class. 
+
+### 4. **MasterDB**
+
+This is the RDS Instance ID.
 
 Go to the RDS Dashboard list of Instances: https://console.aws.amazon.com/rds/home?region=us-east-1#dbinstances:
 
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/rds-1.png)
 
-It can be tricky to figure out which RDS Instance is the one we want, so if you can't tell which one it is we'll look 
-at the site Stack for help. 
+It can be tricky to figure out which RDS Instance is the one we want. If you can't tell which one it is 
+we'll look at the site Stack for help. 
 
-In a new browser tab or window, go to CloudFormation Stacks: 
+**In a new browser tab or window**, go to CloudFormation Stacks: 
 
 https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks?filter=active
 
-Select the site stack, go to **Resources** and you will find `DBInstance` in the **Logical ID** column. Copy the **Physical ID** for that DBInstance 
-(in this example `hdjhee21ma2vq6`):
+Select the site stack, go to **Resources** and you will find `DBInstance` in the _Logical ID_ column. 
 
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/rds-2.png)
 
-Now that we know the DB Instance ID, go back to the other browser tab / window and find that ID on the page:
+**Copy the _Physical ID_ for that DBInstance** (in this example `hdjhee21ma2vq6`).
+
+
+
+
+### 5. **DBClass**
+
+This is the Database Instance Class. 
+
+Now that we know the RDS Instance ID (from Step 4), go back to the **other browser tab / window** with the RDS Instances list and find that ID on the page:
 
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/rds-3.png)
 
 **Copy the value shown in the Class column for that DB Instance.**
 
 In this example it's `db.m3.large`
+
+
+
+
+
+### 6. **DBName**
+
+`DBName` is the application-layer database name. 
+
+Since we have already identified which RDS Instance is the correct one (in step #4 above), we now know where to find the name of the database.
+
+Select that RDS Instance. The full detail for that RDS Instance will be shown.
+
+![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/rds-4.png)
+
+**Copy the DB Name.**
+
+In this example it's `wordpressdb`
+
 
 
 
