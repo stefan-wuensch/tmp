@@ -9,6 +9,9 @@ https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/
 
 The following Parameter values need to be collected from the web site Stack that is to be monitored.
 
+All of the following **eight** Parameters will be used as inputs to the Alarm Stack creation.
+
+
 
 ### 1. **AdminNode**
 
@@ -172,7 +175,55 @@ You can choose any value for `SiteName` as long as it follows these guidelines a
 
 
 
+
 # Starting the Alarms Stack
+
+For this example we will be starting with an existing *Stack Template* from HPAC / HWP.
+
+**Download a copy** of the file 
+[online-learning-harvard-edu.json](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/JSON-Templates/online-learning-harvard-edu.json) 
+onto your local computer. You need to be able to upload the finished Template file to AWS via your web browser.
+
+**Rename your copy** to something appropriate for this tutorial, such as `my-test-template.json`
+
+In your favorite editor, **open your copy of the template**.
+
+Each one of the eight Parameters you collected earlier will be entered as a **Default** in your new template.
+
+For example: using the Parameter values from the examples above, the first four Parameters in your new template would look like this:
+```
+  "Parameters" : {
+
+	"ElasticLoadBalancer" : {
+		"Description" : "The Elastic Load Balancer for the stack",
+		"Type" : "String",
+		"Default" : "HPACNewsP-ElasticL-KUWSX4IQHDSD"
+	},
+
+	"AdminNode" : {
+		"Description" : "The Admin Node for the stack",
+		"Type" : "String",
+		"Default" : "i-97da517d"
+	},
+
+	"AutoScalingGroupMinSize" : {
+		"Description" : "The minimum number of instances of the Auto Scaling Group for the stack",
+		"Type" : "Number",
+		"Default" : 6,
+		"MinValue": 1,
+		"ConstraintDescription": "Must be a number, one or greater"
+	},
+
+	"MasterDB" : {
+		"Description" : "The RDS Instance Name for the database stack",
+		"Type" : "String",
+		"Default" : "hdjhee21ma2vq6"
+	},
+```
+
+Note that you **only need to change the values for the `Default` in each Parameter**.
+
+
 
 
 # Configuring Nagios
