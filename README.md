@@ -178,6 +178,9 @@ You can choose any value for `SiteName` as long as it follows these guidelines a
 
 # Starting the Alarms Stack
 
+
+### 1. Create your template
+
 For this example we will be starting with an existing *Stack Template* from HPAC / HWP.
 
 **Download a copy** of the file 
@@ -222,6 +225,31 @@ For example: using the Parameter values from the examples above, the first four 
 ```
 
 Note that you **only need to change the values for the `Default` in each Parameter**.
+
+
+
+### 2. Create a Stack from your template
+
+Go to the [AWS Console for CloudFormation](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks?filter=active).
+
+Click **Create Stack**:
+
+![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/cloudformation-1.png)
+
+**Enter a name for your Stack**, and then **Upload a template to Amazon S3**:
+
+![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/cloudformation-2.png)
+
+Click the **Choose File** button and select your new Template (from where you saved it in Step 1) and **click Next**.
+
+**Verify the Parameter values** to be what you entered into Defaults in your Template.
+
+Using the example values above, it would look like this:
+
+![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/cloudformation-3.png)
+
+
+
 
 
 
