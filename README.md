@@ -98,12 +98,25 @@ If you can't tell which one it is - like in this example - we'll look at the web
 **In a new browser tab or window**, go to CloudFormation Stacks: <br>
 https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks?filter=active
 
-Select the site stack, go to **Resources** and you will find `DBInstance` in the _Logical ID_ column. 
+Select the site stack, go to **Resources** and look for `AWS::RDS::DBInstance` in the _Type_ column.
 
-![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/rds-2.png)
+Some sites may only have one RDS Instance, like this:
 
-**Copy the _Physical ID_ for that DBInstance** (in this example `hdjhee21ma2vq6`).
+![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/rds-2a.png)
 
+In that case, **copy the _Physical ID_ for that DBInstance** (in this example `hdjhee21ma2vq6`). That's your value for **MasterDB**.
+
+However, sites can have more than one RDS Instance... like a Master and a Replica. In those cases the customer has to 
+clearly indicate which one is which. If they do not, then just as with the AdminNode in Step 1 _you will have to 
+have the customer tell you_ which RDS Instance is the Master.
+
+(Monitoring a Replica RDS can be done as well, but it's not included in this document.)
+
+This is an example of a website Stack with a clearly-marked Master and Replica RDS Instance:
+
+![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/rds-2b.png)
+
+In this case **copy the _Physical ID_ for the MasterDB** (in this example `Stefan-DemoMasterDatabase`). That's your value for **MasterDB**.
 
 
 
@@ -361,6 +374,8 @@ define host {
 	contact_groups		aws-dev-group
 }
 ```
+(The attributes `use` and `contact_groups` are defined elsewhere in Nagios configurations. They are outside the 
+scope of this tutorial.)
 
 In this example the unique values for our Stack are:
 - `aws.test.huit.harvard.edu` as the first part of `host_name` - **this is the value from the `SiteName` Parameter, with dashes changed to dots**
@@ -393,9 +408,16 @@ define service {
 ```
 **Note that the `host_name` is the same as the `host_name` defined in the Host object in the previous step.**
 
+Here also, the attributes `use`, `contact_groups`, and `check_command` are configured elsewhere in Nagios, and are 
+outside the scope of thie documentation.
+
 The `service_description` is `ReadIOPS` which is one of the CloudWatch Alarm Metrics defined in your Template. 
 
 (Optional: If you want to see it, search your Template for `"MetricName": "ReadIOPS"` and you'll see the specific CloudWatch Alarm being defined under `Resources`.)
+
+The `notes` attribute is simply to provide extra information about this Service in the Nagios web UI. The `notes` should 
+contain additional details about the AWS CloudWatch Alarm - such as the threshold and what AWS parameters make up this 
+check - as are shown in this example.
 
 When done, **save the file.**
 
