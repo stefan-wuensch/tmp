@@ -151,6 +151,27 @@ Select the site stack, go to **Resources** and you will find `ElasticLoadBalance
 
 
 
+### 8. SiteName
+
+This is the name of the customer website, changed to be a unique name which will be used by Nagios.
+
+**SiteName must be unique across all AWS VPCs and sites that are monitored by HUIT Nagios.** 
+
+The format must be: website name as FQDN, with dots (periods) replaced by dashes (hyphens). 
+
+Examples:
+
+Public Site Name		| SiteName in CloudFormation Template
+------------------------------- | ------------------------------
+`harvard.edu` 			| `harvard-edu`
+`news.harvard.edu` 		| `news-harvard-edu`
+`campaign.harvard.edu` 		| `campaign-harvard-edu`
+`online-learning.harvard.edu` 	| `online-learning-harvard-edu`
+
+You can choose any value for `SiteName` as long as it follows these guidelines and **is unique**.
+
+
+
 
 
 # Starting the Alarms Stack
