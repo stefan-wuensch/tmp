@@ -248,6 +248,8 @@ Using the example values above, it would look like this:
 
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/cloudformation-3.png)
 
+**Click Next**.
+
 **Leave the Options as they are.** Just click **Next**.
 
 If everything looks correct, **click Create**.
