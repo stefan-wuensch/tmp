@@ -39,7 +39,7 @@ Find the name of the site:
 
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/auto-scaling-min-2.png)
 
-**Jot down the Min value for that group.**
+**Jot down the Min value for that group.** In this case, it's 6.
 
 
 
@@ -50,14 +50,16 @@ This is the SNS Topic Name for getting the Alarm state to Nagios.
 Go to https://console.aws.amazon.com/sns/home?region=us-east-1# and expand the list of Topics:
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/sns-topic-1.png)
 
-You can identify the correct SNS Topic by making sure the Endpoint URL is production Nagios, either:<br>
+Select the Topic that refers to **HUIT Nagios Critical**.
+
+You can confirm that this is the correct SNS Topic by making sure the Endpoint URL is production Nagios, either:<br>
 https://nagios.fas.harvard.edu/aws_sns_receiver.php<br>
 or<br>
 https://nagios.huit.harvard.edu/aws_sns_receiver.php
 
-**Record the Topic ARN:**
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/sns-topic-2.png)
 
+**Copy the Topic ARN.**
 In this example, it's `arn:aws:sns:us-east-1:014311208322:HUIT_Nagios_Critical`
 
 
