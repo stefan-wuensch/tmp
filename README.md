@@ -80,8 +80,7 @@ https://console.aws.amazon.com/rds/home?region=us-east-1#dbinstances:
 It can be tricky to figure out which RDS Instance is the one we want. If you can't tell which one it is 
 we'll look at the site Stack for help. 
 
-**In a new browser tab or window**, go to CloudFormation Stacks: 
-
+**In a new browser tab or window**, go to CloudFormation Stacks: <br>
 https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks?filter=active
 
 Select the site stack, go to **Resources** and you will find `DBInstance` in the _Logical ID_ column. 
