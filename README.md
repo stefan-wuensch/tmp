@@ -18,6 +18,7 @@ Start at https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#Instances:s
 
 Depending on how the site owner has set up the stack, the name may be easy to find or not easy at all. In this example 
 the Instance name makes it easy: `HPACNewsProd Web Admin Server`
+
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/admin_node.png)
 
 The `Instance ID` is in the format `i-abcd1234` (letter 'i', dash, and eight random alphanumeric characters).
@@ -30,7 +31,7 @@ In this example the Instance ID is `i-97da517d`. **Save that for later!**
 
 This is the minimum number of EC2 Instances the site will have. 
 
-Go to EC2 Auto Scaling Groups: 
+Go to EC2 Auto Scaling Groups: <br>
 https://console.aws.amazon.com/ec2/autoscaling/home?region=us-east-1#AutoScalingGroups:view=details
 
 Find the name of the site:
