@@ -103,6 +103,8 @@ Now that we know the RDS Instance ID (from Step 4), go back to the **other brows
 
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/rds-3.png)
 
+In Step #4 we found the value for MasterDB is `hdjhee21ma2vq6`, so we're searching for that ID here.
+
 **Copy the value shown in the Class column for that DB Instance.** <br>
 In this example it's `db.m3.large`
 
