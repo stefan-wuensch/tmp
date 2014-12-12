@@ -449,9 +449,11 @@ Total Errors:   0
 
 Perform a configuration reload by running as root: `service nagios reload`
 
-You can now go to https://nagios.huit.harvard.edu/nagios/ and search for your new Host.
+You can now go to https://nagios.huit.harvard.edu/nagios/ and search for your new Host:
 
+![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/nagios-1.png)
 
+(You don't need to fill in the full Host name. A partial name will return the alphabetically first partial match.)
 
 
 # Testing
