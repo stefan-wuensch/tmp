@@ -37,9 +37,9 @@ https://console.aws.amazon.com/ec2/autoscaling/home?region=us-east-1#AutoScaling
 Find the name of the site:
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/auto-scaling-min.png)
 
-**Take down the Min value for that group:**
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/auto-scaling-min-2.png)
 
+**Jot down the Min value for that group.**
 
 
 
