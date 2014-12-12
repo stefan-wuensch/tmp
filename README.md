@@ -351,9 +351,9 @@ define host {
 ```
 
 In this example the unique values for our Stack are:
-- `aws.test.huit.harvard.edu` as the first part of `host_name` - this is the value from the `SiteName` Parameter, with dashes changed to dots
-- `hdjhee21ma2vq6` as the second part of `host_name` - this is the `MasterDB` Parameter from above
-- `aws.test` as the first part of `_AWS_Data` - this is a short form of `SiteName` which is used in Nagios displays
+- `aws.test.huit.harvard.edu` as the first part of `host_name` - **this is the value from the `SiteName` Parameter, with dashes changed to dots**
+- `hdjhee21ma2vq6` as the second part of `host_name` - **this is the `MasterDB` Parameter from above**
+- `aws.test` as the first part of `_AWS_Data` - **this is a short form of `SiteName` which is used in Nagios displays**
 
 **These three unique values must be taken from the `SiteName` and `MasterDB` from your stack.**
 
