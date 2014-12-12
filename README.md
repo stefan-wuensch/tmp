@@ -248,6 +248,13 @@ Using the example values above, it would look like this:
 
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/cloudformation-3.png)
 
+**Leave the Options as they are.** Just click **Next**.
+
+If everything looks correct, **click Create**.
+
+After a few minutes your new Stack should go from `CREATE_IN_PROGRESS` to `CREATE_COMPLETE`. If needed, click the Refresh button.
+
+![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/cloudformation-3.png)
 
 
 
