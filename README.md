@@ -199,7 +199,7 @@ Each one of the eight Parameters you collected earlier will be entered as a **De
 
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/template-1.png)
 
-For example: using the Parameter values from the examples above, the first four Parameters in your new template would look like this:
+For example: using the Parameter values from the examples above, the Parameters in your new template would look like this:
 ```
   "Parameters" : {
 
@@ -228,6 +228,52 @@ For example: using the Parameter values from the examples above, the first four 
 		"Type" : "String",
 		"Default" : "hdjhee21ma2vq6"
 	},
+
+	"CriticalAlarmTopic" : {
+		"Description" : "The name of the Nagios Critical Alarm SNS Topic",
+		"Type" : "String",
+		"Default" : "arn:aws:sns:us-east-1:014311208322:HUIT_Nagios_Critical"
+	},
+
+	"DBClass" : {
+        	"Description" : "Database instance class",
+      		"Type" : "String",
+		"Default" : "db.m3.large",
+		"AllowedValues" : [ 
+					"db.m1.large", 
+					"db.m1.small", 
+					"db.m1.xlarge", 
+					"db.m2.2xlarge", 
+					"db.m2.4xlarge",
+					"db.m2.xlarge", 
+					"db.m3.large",
+					"db.m3.medium",
+					"db.t1.micro"
+		],
+      		"ConstraintDescription" : "must select a valid database instance type."
+    	},
+
+
+    	"DBName": {
+      		"Description" : "The Drupal database name",
+      		"Type": "String",
+		"Default" : "wordpressdb",
+      		"MinLength": "1",
+      		"MaxLength": "64",
+      		"AllowedPattern" : "[a-zA-Z][a-zA-Z0-9]*",
+      		"ConstraintDescription" : "must begin with a letter and contain only alphanumeric characters."
+    	},
+
+    	"SiteName": {
+      		"Description" : "Customer Site Name",
+      		"Type": "String",
+		"Default" : "aws-test-huit-harvard-edu",
+      		"MinLength": "1",
+      		"MaxLength": "64",
+      		"AllowedPattern" : "[a-zA-Z][a-zA-Z0-9-]*",
+      		"ConstraintDescription" : "must begin with a letter and contain only alphanumeric characters."
+    	}
+    },
 ```
 
 Note that you **only need to change the values for the `Default` in each Parameter**.
