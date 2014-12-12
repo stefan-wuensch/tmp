@@ -286,7 +286,7 @@ The Nagios config files are located in `/usr/local/nagios/etc`
 
 ### 1. Create Nagios Host objects
 
-Edit the file `hosts.cfg`
+**Edit the file `hosts.cfg`**
 
 This is an example Nagios Host object to define the RDS Instance from the example above:
 ```
@@ -303,29 +303,69 @@ In this example the unique values for our Stack are:
 - `hdjhee21ma2vq6` as the second part of `host_name` - this is the `MasterDB` Parameter from above
 - `aws.test` as the first part of `_AWS_Data` - this is a short form of `SiteName` which is used in Nagios displays
 
-These three unique values must be taken from the `SiteName` and `MasterDB` from your stack.
+**These three unique values must be taken from the `SiteName` and `MasterDB` from your stack.**
 
+When done, **save the file.**
 
 
 
 
 ### 2. Create Nagios Service objects
 
+**Edit the `services.cfg`**
+
+This is an example Nagios Service object to define a specific CloudWatch Alarm for the RDS Instance from the example above:
+```
+define service {
+	use					aws-service-CloudFront-Alarm
+	host_name			aws.test.huit.harvard.edu:hdjhee21ma2vq6
+	service_description	ReadIOPS
+	notes				Alarm if hpacdrupaldb ReadIOPs > 100 for 5 minutes (DBInstanceIdentifier = aws.test.huit.harvard.edu:hdjhee21ma2vq6, AlarmName = aws.test.huit.harvard.edu RDS Read IO, Namespace = AWS/RDS)
+	contact_groups		aws-dev-group
+	check_command		check_AWS_CloudWatch_Alarm!cloudhacks
+}
+```
+**Note that the `host_name` is the same as the `host_name` defined in the Host object in the previous step.**
+
+The `service_description` is `ReadIOPS` which is one of the CloudWatch Alarm Metrics defined in your Template. 
+
+(Search your Template for `"MetricName": "ReadIOPS"` and you'll see the specific CloudWatch Alarm being defined under `Resources`.)
+
+When done, **save the file.**
+
+
 
 
 ### 3. Test the Nagios configuration
+
+We now have one new Nagios Host and one new Nagios Service defined. 
+
+**On the Nagios server as root, run `service nagios configtest | grep -v "WARNING: Extinfo objects are deprecated"`**
+
+(The `grep` is to remove warnings from Nagios version 2 config entries which need to get cleaned up but aren't fatal.)
+
+As long as you see the following all-clear, you're all set:
+```
+Total Warnings: 0
+Total Errors:   0
+```
+
+
 
 
 
 ### 4. Reload the Nagios configuration
 
+Perform a configuration reload by running as root: `service nagios reload`
 
-
-
+You can now go to https://nagios.huit.harvard.edu/nagios/ and search for your new Host.
 
 
 
 
 # Testing
+
+TBD
+
 
 
