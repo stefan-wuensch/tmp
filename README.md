@@ -32,6 +32,8 @@ the Instance name makes it easy: `HPACNewsProd Web Admin Server`
 
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/admin_node.png)
 
+If the Web Admin Instance cannot be easily identified, _you may need to contact the customer_ and have them tell you its name.
+
 The `Instance ID` is in the format `i-abcd1234` (letter 'i', dash, and eight random alphanumeric characters).
 
 In this example the Instance ID is `i-97da517d`. **Save that for later!**
@@ -51,7 +53,7 @@ Find the name of the site:
 
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/auto-scaling-min-2.png)
 
-**Jot down the Min value for that group.** In this case, it's 6.
+**Jot down the Min value for that group.** In this case, it's `6`.
 
 
 
@@ -88,8 +90,10 @@ https://console.aws.amazon.com/rds/home?region=us-east-1#dbinstances:
 
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/rds-1.png)
 
-It can be tricky to figure out which RDS Instance is the one we want. If you can't tell which one it is 
-we'll look at the site Stack for help. 
+It can be tricky to figure out which RDS Instance is the one we want. (The image above demonstrates this. There is no way 
+to tell from what is listed here which of these RDS Instances is the right one!)
+
+If you can't tell which one it is - like in this example - we'll look at the website CloudFormation Stack for help. 
 
 **In a new browser tab or window**, go to CloudFormation Stacks: <br>
 https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks?filter=active
