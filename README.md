@@ -276,8 +276,35 @@ The name you gave as the `SiteName` will preface each new CloudWatch Alarm name.
 
 # Configuring Nagios
 
+For this example, we will be manually configuring one Nagios **Host** and one Nagios **Service**.
+
+As of 2014-12-11 the HUIT production Nagios host is `palantir2.unix.fas.harvard.edu` (`140.247.35.189`).
+
+The Nagios config files are located in `/usr/local/nagios/etc`
+
+
 
 ### 1. Create Nagios Host objects
+
+Edit the file `hosts.cfg`
+
+This is an example Nagios Host object to define the RDS Instance from the example above:
+```
+define host {
+	use					aws-host-active-check
+	host_name			aws.test.huit.harvard.edu:hdjhee21ma2vq6
+	_AWS_Data			aws.test:AWS/RDS:DBInstanceIdentifier
+	contact_groups		aws-dev-group
+}
+```
+
+In this example the unique values for our Stack are:
+- `aws.test.huit.harvard.edu` as the first part of `host_name` - this is the value from the `SiteName` Parameter, with dashes changed to dots
+- `hdjhee21ma2vq6` as the second part of `host_name` - this is the `MasterDB` Parameter from above
+- `aws.test` as the first part of `_AWS_Data` - this is a short form of `SiteName` which is used in Nagios displays
+
+These three unique values must be taken from the `SiteName` and `MasterDB` from your stack.
+
 
 
 
