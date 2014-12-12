@@ -456,9 +456,55 @@ You can now go to https://nagios.huit.harvard.edu/nagios/ and search for your ne
 (You don't need to fill in the full Host name. A partial name will return the alphabetically first partial match.)
 
 
-# Testing
 
-TBD
 
+
+
+# Testing CloudWatch Alarms and Nagios
+
+The AWS CLI can be used to change the state of a CloudWatch Alarm to create a notification test. 
+The command is `aws cloudwatch set-alarm-state` with options described below.
+
+The AWS CLI tools are installed on the Nagios server.
+
+    % which aws
+    /usr/bin/aws
+
+**Important**: In order to use the AWS CLI, user credentials need to be created. Doing so is outside the scope of this 
+docuemnt, but details can be found at https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/tree/master/Configuration
+
+For this example we will use `sudo` to run the commands as the `nagios` user which has AWS CLI credentials. 
+
+**Each admin who uses the AWS CLI should create their own private credentials.**
+
+Using the example configurations from above, we need to supply the AWS CLI with the following parameters:
+
+1. `--alarm-name` (which is the name in CloudWatch not Nagios)
+2. `--state-reason` - some text message explaining that it's a test
+3. `--state-value` - can be `ALARM` or `OK` or `INSUFFICIENT_DATA`
+4. `--profile` for the particular VPC, to get the AWS CLI credentials
+
+A complete test command line for the example CloudWatch Alarm and Nagios Host and Service created above looks like:
+```
+# sudo -u nagios aws cloudwatch set-alarm-state --alarm-name "aws-test-huit-harvard-edu RDS Read IO" --state-reason "Nagios TEST ONLY - please disregard this test - setting AWS alarm to ALARM" --state-value ALARM --profile cloudhacks
+```
+
+You can verify that the Alarm was set by going to CloudWatch and selecting that Alarm, then view the **History** tab:
+
+![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/nagios-2.png)
+
+Note that the Alarm changed to state ALARM from our CLI command, but since the actual state is OK it flipped right back. 
+This ensures that manual twiddling of an Alarm state for testing purposes won't make that Alarm become out-of-sync 
+with the actual condition being monitored.
+
+
+
+
+
+# Attribution
+
+This documentation produced November 2014 by Stefan Wuensch <stefan_wuensch@harvard.edu>
+
+Assistance and additional material by Stephen Martino <stephen_martino@harvard.edu>
 
 
