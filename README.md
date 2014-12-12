@@ -11,6 +11,14 @@ The following Parameter values need to be collected from the web site Stack that
 
 All of the following **eight** Parameters will be used as inputs to the Alarm Stack creation.
 
+1. AdminNode
+2. AutoScalingGroupMinSize
+3. CriticalAlarmTopic
+4. MasterDB
+5. DBClass
+6. DBName
+7. ElasticLoadBalancer
+8. SiteName
 
 
 ### 1. **AdminNode**
@@ -338,9 +346,9 @@ The Nagios config files are located in `/usr/local/nagios/etc`
 
 ### 1. Create Nagios Host objects
 
-**Edit the file `hosts.cfg`**
+**Edit the file `hosts.cfg` and add a new `define host` stanza.**
 
-This is an example Nagios Host object to define the RDS Instance from the example above:
+This is an example Nagios Host object. This defines the RDS Instance with the example values we used previously:
 ```
 define host {
 	use					aws-host-active-check
@@ -366,9 +374,9 @@ When done, **save the file.**
 
 ### 2. Create Nagios Service objects
 
-**Edit the `services.cfg`**
+**Edit the `services.cfg` and add a new `define service` stanza.**
 
-This is an example Nagios Service object to define a specific CloudWatch Alarm for the RDS Instance from the example above:
+This is an example Nagios Service object. This defines a specific CloudWatch Alarm for the RDS Instance from the example above:
 ```
 define service {
 	use					aws-service-CloudFront-Alarm
@@ -383,7 +391,7 @@ define service {
 
 The `service_description` is `ReadIOPS` which is one of the CloudWatch Alarm Metrics defined in your Template. 
 
-(Search your Template for `"MetricName": "ReadIOPS"` and you'll see the specific CloudWatch Alarm being defined under `Resources`.)
+(Optional: If you want to see it, search your Template for `"MetricName": "ReadIOPS"` and you'll see the specific CloudWatch Alarm being defined under `Resources`.)
 
 When done, **save the file.**
 
