@@ -145,7 +145,8 @@ Select the site stack, go to **Resources** and you will find `ElasticLoadBalance
 
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/elb-1.png)
 
-**Copy the _Physical ID_ for that ElasticLoadBalancer** (in this example `HPACNewsP-ElasticL-KUWSX4IQHDSD`).
+**Copy the _Physical ID_ for that ElasticLoadBalancer** <br>
+(in this example `HPACNewsP-ElasticL-KUWSX4IQHDSD`).
 
 
 
