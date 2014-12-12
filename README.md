@@ -142,7 +142,7 @@ Finding the correct ELB can be difficult, just like finding the correct RDS in S
 
 Just as with Step 4: if you can't easily figure out which ELB is the right one, refer to the site Stack.
 
-**In a new browser tab or window**, go to CloudFormation Stacks: <br>
+**In a new browser tab or window**, go to CloudFormation Stacks again: <br>
 https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks?filter=active <br>
 (Of course if you kept the browser tab or window open from Step 4 you can just switch back to it.)
 
@@ -166,7 +166,7 @@ The format must be: website name as FQDN, with dots (periods) replaced by dashes
 
 Examples:
 
-Public Site Name		| SiteName in CloudFormation Template
+Public Site Name		| SiteName value in CloudFormation Template
 ------------------------------- | ------------------------------
 `harvard.edu` 			| `harvard-edu`
 `news.harvard.edu` 		| `news-harvard-edu`
