@@ -46,7 +46,7 @@ In this example the Instance ID is `i-97da517d`. **Save that for later!**
 
 ### 2. **AutoScalingGroupMinSize**
 
-This is the minimum number of EC2 Instances the site will have. 
+This is the minimum number of EC2 **webserver** Instances the site will have. (This is **not** to do with the Admin Node.)
 
 Go to EC2 Auto Scaling Groups: <br>
 https://console.aws.amazon.com/ec2/autoscaling/home?region=us-east-1#AutoScalingGroups:view=details
@@ -103,13 +103,13 @@ https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks?filt
 
 Select the site stack, go to **Resources** and look for `AWS::RDS::DBInstance` in the _Type_ column.
 
-Some sites may only have one RDS Instance, like this:
+_Some sites may only have one RDS Instance_, like this:
 
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/rds-2a.png)
 
 In that case, **copy the _Physical ID_ for that DBInstance** (in this example `hdjhee21ma2vq6`). That's your value for **MasterDB**.
 
-However, sites can have more than one RDS Instance... like a Master and a Replica. In those cases the customer has to 
+However, _sites can have more than one RDS Instance_... like a Master and a Replica. In those cases the customer has to 
 clearly indicate which one is which. If they do not, then just as with the AdminNode in Step 1 _you will have to 
 have the customer tell you_ which RDS Instance is the Master.
 
@@ -368,7 +368,8 @@ The Nagios config files are located in `/usr/local/nagios/etc`
 
 **Edit the file `hosts.cfg` and add a new `define host` stanza.**
 
-This is an example Nagios Host object. This defines the RDS Instance with the example values we used previously:
+This is an example Nagios Host object. This defines the RDS Instance with the example values we used previously.
+You can copy & paste this text block if you like:
 ```
 define host {
 	use					aws-host-active-check
@@ -385,7 +386,7 @@ In this example the unique values for our Stack are:
 
 - `hdjhee21ma2vq6` as the second part of `host_name` - **this is the `MasterDB` Parameter from above**
 
-- `aws.test` as the first part of `_AWS_Data` - **this is a short form of `SiteName` which is used in Nagios displays**
+- `aws.test` as the first part of `_AWS_Data` (the part - **this is a short form of `SiteName` which is used in Nagios displays**
 
 **These three unique values must be taken from the `SiteName` and `MasterDB` from your stack.**
 
@@ -398,13 +399,13 @@ When done, **save the file.**
 
 **Edit the `services.cfg` and add a new `define service` stanza.**
 
-This is an example Nagios Service object. This defines a specific CloudWatch Alarm for the RDS Instance from the example above:
+This is an example Nagios Service object. This defines a specific CloudWatch Alarm for the RDS Instance from the example above.
+Again, you can copy & paste this text block if you like.
 ```
 define service {
 	use					aws-service-CloudFront-Alarm
 	host_name			aws.test.huit.harvard.edu:hdjhee21ma2vq6
 	service_description	ReadIOPS
-	notes				Alarm if hpacdrupaldb ReadIOPs > 100 for 5 minutes (DBInstanceIdentifier = aws.test.huit.harvard.edu:hdjhee21ma2vq6, AlarmName = aws.test.huit.harvard.edu RDS Read IO, Namespace = AWS/RDS)
 	contact_groups		aws-dev-group
 	check_command		check_AWS_CloudWatch_Alarm!cloudhacks
 }
@@ -417,10 +418,6 @@ outside the scope of thie documentation.
 The `service_description` is `ReadIOPS` which is one of the CloudWatch Alarm Metrics defined in your Template. 
 
 (Optional: If you want to see it, search your Template for `"MetricName": "ReadIOPS"` and you'll see the specific CloudWatch Alarm being defined under `Resources`.)
-
-The `notes` attribute is simply to provide extra information about this Service in the Nagios web UI. The `notes` should 
-contain additional details about the AWS CloudWatch Alarm - such as the threshold and what AWS parameters make up this 
-check - as are shown in this example.
 
 When done, **save the file.**
 
