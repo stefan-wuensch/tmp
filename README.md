@@ -46,7 +46,7 @@ In this example the Instance ID is `i-97da517d`. **Save that for later!**
 
 ### 2. **AutoScalingGroupMinSize**
 
-This is the minimum number of EC2 **webserver** Instances the site will have. (This is **not** to do with the Admin Node.)
+This is the minimum number of EC2 **webserver** Instances the site will have. <br>(This is **not** to do with the Admin Node.)
 
 Go to EC2 Auto Scaling Groups: <br>
 https://console.aws.amazon.com/ec2/autoscaling/home?region=us-east-1#AutoScalingGroups:view=details
