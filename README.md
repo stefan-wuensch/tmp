@@ -386,7 +386,7 @@ In this example the unique values for our Stack are:
 
 - `hdjhee21ma2vq6` as the second part of `host_name` - **this is the `MasterDB` Parameter from above**
 
-- `aws.test` as the first part of `_AWS_Data` (the part before the first colon - **this is a short form of `SiteName` which is used in Nagios displays**
+- `aws.test` as the first part of `_AWS_Data` (the part before the first colon) - **this is a short form of `SiteName` which is used in Nagios displays**
 
 **These three unique values must be taken from the `SiteName` and `MasterDB` from your stack.**
 
