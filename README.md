@@ -104,7 +104,7 @@ to tell from what is shown here which of these RDS Instances is the right one!)
 If you can't tell which one it is - like in this example - we'll look at the website CloudFormation Stack for help. 
 (Since the CloudFormation Stack created all these resources, it will show us which RDS is for this site.)
 
-**In a new browser tab or window**, go to CloudFormation Stacks: <br>
+Go to CloudFormation Stacks console: <br>
 https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks?filter=active
 
 Select the site stack, go to **Resources** and look for `AWS::RDS::DBInstance` in the _Type_ column.
@@ -135,13 +135,15 @@ In this case **copy the _Physical ID_ for the MasterDB** (in this example `Stefa
 
 ### 5. **DBClass**
 
-This is the Database Instance Class. 
+This is the Database Instance Class. It's the type and size of the database.
 
-Now that we know the RDS Instance ID (from Step 4), go back to the **other browser tab / window** with the RDS Instances list and find that ID on the page:
+Now that we know the RDS Instance ID (from Step 4), go back to the RDS Instances console:<br>
+https://console.aws.amazon.com/rds/home?region=us-east-1#dbinstances: <br>
+and find that ID on the page.
+
+In Step #4 we found the value for MasterDB is `hdjhee21ma2vq6`, so we're searching for that ID here:
 
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/rds-3.png)
-
-In Step #4 we found the value for MasterDB is `hdjhee21ma2vq6`, so we're searching for that ID here.
 
 **Copy the value shown in the Class column for that DB Instance.** <br>
 In this example it's `db.m3.large`
@@ -178,11 +180,10 @@ https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LoadBalancers:
 
 Finding the correct ELB can be difficult, just like finding the correct RDS in Step 4. 
 
-Just as with Step 4: if you can't easily figure out which ELB is the right one, refer to the site Stack.
+Just like Step 4: if you can't easily figure out which ELB is the right one, refer to the site CloudFormation Stack.
 
-**In a new browser tab or window**, go to CloudFormation Stacks again: <br>
+Go to CloudFormation Stacks again: <br>
 https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks?filter=active <br>
-(Of course if you kept the browser tab or window open from Step 4 you can just switch back to it.)
 
 Select the site stack, go to **Resources** and you will find `ElasticLoadBalancer` in the _Logical ID_ column. 
 
