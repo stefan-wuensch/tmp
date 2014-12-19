@@ -26,6 +26,22 @@ All of the following **eight** Parameters will be used as inputs to the Alarm St
 7. ElasticLoadBalancer
 8. SiteName
 
+**Suggestion**: Copy the following text block and make a temporary text file on your computer 
+to record the values as you go along.
+
+```
+1. AdminNode:                   
+2. AutoScalingGroupMinSize:     
+3. CriticalAlarmTopic:          
+4. MasterDB:                    
+5. DBClass:                     
+6. DBName:                      
+7. ElasticLoadBalancer:         
+8. SiteName:                    
+```
+
+
+
 
 ### 1. **AdminNode**
 
@@ -214,6 +230,7 @@ Public Site Name		| SiteName value in CloudFormation Template
 
 You can choose any value for `SiteName` as long as it follows these guidelines and **is unique**.
 
+Example for this demo: `nagios-aws-cloudhacks-demo-huit-harvard-edu`
 
 
 
