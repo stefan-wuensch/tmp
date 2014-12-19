@@ -3,6 +3,11 @@ This file **README.md** is a step-by-step guide to setting up AWS CloudWatch Ala
 This is a high-level tutorial, designed to be only what you need to get started. For detailed information, see
 https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Detailed_Tutorial.md
 
+This tutorial uses a demo website in the CloudHacks AWS account. The name of the CloudFormation Stack for the 
+demo website is `HUIT-AWS-and-Nagios-Boot-Camp-Drupal-Demo-Site`. For details on how to create the site demo 
+stack can be found at 
+https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Demo_Site_Stack_Setup.md
+
 **Note**: All the images presented here can be viewed in their native size by clicking the image and then 
 clicking **Raw**.
 
