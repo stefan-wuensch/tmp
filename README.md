@@ -74,12 +74,12 @@ In this example the Instance ID is `i-97da517d`. **Save that for later!**
 
 ### 2. **AutoScalingGroupMinSize**
 
-This is the minimum number of EC2 **webserver** Instances the site will have. <br>(This is **not** to do with the Admin Node.)
+This is the minimum number of EC2 **webserver** Instances the site will have. <br>(This is **not** for the Admin Node.)
 
 Go to EC2 Auto Scaling Groups: <br>
 https://console.aws.amazon.com/ec2/autoscaling/home?region=us-east-1#AutoScalingGroups:view=details
 
-Find the name of the site:
+Find the one for the site:
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/auto-scaling-min.png)
 
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/auto-scaling-min-2.png)
@@ -131,6 +131,8 @@ Go to CloudFormation Stacks console: <br>
 https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks?filter=active
 
 Select the site stack, go to **Resources** and look for `AWS::RDS::DBInstance` in the _Type_ column.
+
+Again, the name of the CloudFormation Stack for this demo website is `HUIT-AWS-and-Nagios-Boot-Camp-Drupal-Demo-Site`.
 
 ### 4a.
 
@@ -208,7 +210,8 @@ Just like Step 4: if you can't easily figure out which ELB is the right one, ref
 Go to CloudFormation Stacks again: <br>
 https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks?filter=active <br>
 
-Select the site stack, go to **Resources** and you will find `ElasticLoadBalancer` in the _Logical ID_ column. 
+Select the site stack (for this demo it's `HUIT-AWS-and-Nagios-Boot-Camp-Drupal-Demo-Site`), 
+go to **Resources** and you will find `ElasticLoadBalancer` in the _Logical ID_ column. 
 
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/elb-1.png)
 
