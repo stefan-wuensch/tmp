@@ -96,10 +96,10 @@ This is the RDS Instance ID.
 Go to the RDS Dashboard list of Instances: <br>
 https://console.aws.amazon.com/rds/home?region=us-east-1#dbinstances:
 
-![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/rds-1.png)
-
-It can be tricky to figure out which RDS Instance is the one we want. (The image above demonstrates this. There is no way 
+It can be tricky to figure out which RDS Instance is the one we want. (The image below demonstrates this. There is no way 
 to tell from what is listed here which of these RDS Instances is the right one!)
+
+![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/rds-1.png)
 
 If you can't tell which one it is - like in this example - we'll look at the website CloudFormation Stack for help. 
 
