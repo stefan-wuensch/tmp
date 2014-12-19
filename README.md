@@ -111,7 +111,7 @@ Select the site stack, go to **Resources** and look for `AWS::RDS::DBInstance` i
 
 ### 4a.
 
-_Some sites may only have one RDS Instance_, like this:
+Some sites may only have one RDS Instance, like this:
 
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/rds-2a.png)
 
@@ -119,7 +119,7 @@ In that case, **copy the _Physical ID_ for that DBInstance** (in this example `h
 
 ### 4b.
 
-However, _sites can have more than one RDS Instance_... like a Master and a Replica. In those cases the customer has to 
+However, **sites can have more than one RDS Instance**... like a Master and a Replica. In those cases the customer has to 
 clearly indicate which one is which. If they do not, then just as with the AdminNode in Step 1 _you will have to 
 have the customer tell you_ which RDS Instance is the Master.
 
