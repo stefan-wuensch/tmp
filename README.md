@@ -35,6 +35,7 @@ All of the following **eight** Parameters will be used as inputs to the Alarm St
 to record the values as you go along.
 
 ```
+########## Cut here ############
 1. AdminNode:                   
 2. AutoScalingGroupMinSize:     
 3. CriticalAlarmTopic:          
@@ -43,6 +44,7 @@ to record the values as you go along.
 6. DBName:                      
 7. ElasticLoadBalancer:         
 8. SiteName:                    
+########## Cut here ############
 ```
 
 
