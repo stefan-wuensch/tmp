@@ -97,22 +97,27 @@ Go to the RDS Dashboard list of Instances: <br>
 https://console.aws.amazon.com/rds/home?region=us-east-1#dbinstances:
 
 It can be tricky to figure out which RDS Instance is the one we want. (The image below demonstrates this. There is no way 
-to tell from what is listed here which of these RDS Instances is the right one!)
+to tell from what is shown here which of these RDS Instances is the right one!)
 
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/rds-1.png)
 
 If you can't tell which one it is - like in this example - we'll look at the website CloudFormation Stack for help. 
+(Since the CloudFormation Stack created all these resources, it will show us which RDS is for this site.)
 
 **In a new browser tab or window**, go to CloudFormation Stacks: <br>
 https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks?filter=active
 
 Select the site stack, go to **Resources** and look for `AWS::RDS::DBInstance` in the _Type_ column.
 
+### 4a.
+
 _Some sites may only have one RDS Instance_, like this:
 
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/rds-2a.png)
 
 In that case, **copy the _Physical ID_ for that DBInstance** (in this example `hdjhee21ma2vq6`). That's your value for **MasterDB**.
+
+### 4b.
 
 However, _sites can have more than one RDS Instance_... like a Master and a Replica. In those cases the customer has to 
 clearly indicate which one is which. If they do not, then just as with the AdminNode in Step 1 _you will have to 
