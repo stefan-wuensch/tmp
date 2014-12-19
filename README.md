@@ -6,6 +6,9 @@ https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/
 **Note**: All the images presented here can be viewed in their native size by clicking the image and then 
 clicking **Raw**.
 
+Also note: This example uses a web site created with a `CloudFormation Template`. If a customer requests monitoring for 
+a site that was created _without_ a CloudFormation Template, _they will have to provide specific names and IDs_ for 
+things like the database and load balancer. 
 
 
 # Gathering Parameters
@@ -26,7 +29,9 @@ All of the following **eight** Parameters will be used as inputs to the Alarm St
 
 ### 1. **AdminNode**
 
-This is the EC2 Instance ID of the Web Admin Node for the site. 
+This is the EC2 Instance ID of the Web Admin Node for the site. <br>
+(The Admin Node is the server used to _update_ site content. This is different than the Webserver Nodes 
+which only _deliver the content_ read-only.)
 
 Start at https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#Instances:sort=tag:Name
 
