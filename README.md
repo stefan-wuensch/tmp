@@ -550,7 +550,8 @@ with the actual condition being monitored.
 
 Now that we know the CloudWatch Alarm has changed state, we should see in Nagios the notification from that alarm.
 
-When viewing the Service Status Details for the host, click `View Notifications For This Host`:<br>
+When viewing the Service Status Details for the host, click `View Notifications For This Host`:
+
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/nagios-3.png)
 
 
