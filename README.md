@@ -339,7 +339,6 @@ For example: using the Parameter values from the examples above, the Parameters 
 		"Default" : "HUIT-Nagi-ElasticL-1G0TXD0NZRDMM"
 	},
 
-
 	"SiteName": {
 		"Description" : "Customer Site Name",
 		"Type": "String",
