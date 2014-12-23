@@ -421,8 +421,8 @@ You can copy & paste this text block if you like:
 ```
 define host {
 	use					aws-host-active-check
-	host_name			aws.test.huit.harvard.edu:hdjhee21ma2vq6
-	_AWS_Data			aws.test:AWS/RDS:DBInstanceIdentifier
+	host_name			nagios.aws.cloudhacks.demo.huit.harvard.edu:HUIT-Nagios-CloudWatch-BootcampMasterDatabase
+	_AWS_Data			nagios.aws.cloudhacks.demo:AWS/RDS:DBInstanceIdentifier
 	contact_groups		aws-dev-group
 }
 ```
@@ -430,11 +430,11 @@ define host {
 scope of this tutorial.)
 
 In this example the unique values for our Stack are:
-- `aws.test.huit.harvard.edu` as the first part of `host_name` - **this is the value from the `SiteName` Parameter, with dashes changed to dots**
+- `nagios.aws.cloudhacks.demo.huit.harvard.edu` as the first part of `host_name` - **this is the value from the `SiteName` Parameter, with dashes changed to dots**
 
-- `hdjhee21ma2vq6` as the second part of `host_name` - **this is the `MasterDB` Parameter from above**
+- `HUIT-Nagios-CloudWatch-BootcampMasterDatabase` as the second part of `host_name` - **this is the `MasterDB` Parameter from above**
 
-- `aws.test` as the first part of `_AWS_Data` (the part before the first colon) - **this is a short form of `SiteName` which is used in Nagios displays**
+- `nagios.aws.cloudhacks.demo` as the first part of `_AWS_Data` (the part before the first colon) - **this is a short form of `SiteName` which is used in Nagios displays**
 
 **These three unique values must be taken from the `SiteName` and `MasterDB` from your stack.**
 
@@ -452,7 +452,7 @@ Again, you can copy & paste this text block if you like.
 ```
 define service {
 	use					aws-service-CloudFront-Alarm
-	host_name			aws.test.huit.harvard.edu:hdjhee21ma2vq6
+	host_name			nagios.aws.cloudhacks.demo.huit.harvard.edu:HUIT-Nagios-CloudWatch-BootcampMasterDatabase
 	service_description	ReadIOPS
 	contact_groups		aws-dev-group
 	check_command		check_AWS_CloudWatch_Alarm!cloudhacks
