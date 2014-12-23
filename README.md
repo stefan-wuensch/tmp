@@ -349,7 +349,7 @@ For example: using the Parameter values from the examples above, the Parameters 
 		"AllowedPattern" : "[a-zA-Z][a-zA-Z0-9-]*",
 		"ConstraintDescription" : "must begin with a letter and contain only alphanumeric characters."
 	}
-    },
+  },
 ```
 
 Note that you **only need to change the values for the `Default` in each Parameter**.
