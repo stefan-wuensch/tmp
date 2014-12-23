@@ -167,11 +167,13 @@ That's your value for **MasterDB**.<br>
 
 This is the Database Instance Class. It's the type and size of the database.
 
-Now that we know the RDS Instance ID (from Step 4), go back to the RDS Instances console:<br>
+Now that we know the RDS Instance ID (from Step 4b), go back to the RDS Instances console:<br>
 https://console.aws.amazon.com/rds/home?region=us-east-1#dbinstances: <br>
-and find that ID on the page.
+![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/rds-2d.png)
 
-In Step #4 we found the value for MasterDB is `hdjhee21ma2vq6`, so we're searching for that ID here:
+Find that RDS ID on the page.
+
+In Step #4 we found the value for MasterDB is `HUIT-Nagios-CloudWatch-BootcampMasterDatabase`, so we're searching for that ID here:
 
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/rds-3.png)
 
