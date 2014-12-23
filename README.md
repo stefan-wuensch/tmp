@@ -95,10 +95,10 @@ In this example it's `HUIT-Nagios-CloudWatch-Bootcamp-WebServerGroup1-V8BKRFKTYG
 
 This is the SNS Topic Name for getting the Alarm state to Nagios. 
 
-Go to https://console.aws.amazon.com/sns/home?region=us-east-1# and **expand the list of Topics**:
+Go to https://console.aws.amazon.com/sns/home?region=us-east-1# and **expand the list of Topics**:<br>
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/sns-topic-1.png)
 
-Select the Topic that refers to **HUIT Nagios Critical**.
+Select the Topic that refers to **HUIT Nagios Critical**.<br>
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/sns-topic-1b.png)
 
 You can confirm that this is the correct SNS Topic by making sure the Endpoint URL is production Nagios, either:<br>
