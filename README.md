@@ -67,7 +67,7 @@ If the Web Admin Instance cannot be easily identified, _you may need to contact 
 
 The `Instance ID` is in the format `i-abcd1234` (letter 'i', dash, and eight random alphanumeric characters).
 
-In this example the Instance ID is `i-97da517d`. **Save that for later!**
+In this example the Instance ID is `i-6bdfa787`. **Save that for later!**
 
 
 
