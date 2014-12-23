@@ -261,10 +261,10 @@ Example for this demo: `nagios-aws-cloudhacks-demo-huit-harvard-edu`
 
 ### 1. Create your template
 
-For this example we will be starting with an existing *Stack Template* from HPAC / HWP.
+For this example we will be starting with an existing *Stack Template*.
 
 **Download a copy** of the file 
-[online-learning-harvard-edu.json](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/JSON-Templates/online-learning-harvard-edu.json) 
+[Boot-camp Alarms stack 2014-12-23.json](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/JSON-Templates/Boot-camp Alarms stack 2014-12-23.json) 
 onto your local computer. You need to be able to upload the finished Template file to AWS via your web browser.
 
 **Rename your copy** to something appropriate for this tutorial, such as `my-test-template.json`
@@ -279,42 +279,36 @@ For example: using the Parameter values from the examples above, the Parameters 
 ```
   "Parameters" : {
 
-	"ElasticLoadBalancer" : {
-		"Description" : "The Elastic Load Balancer for the stack",
-		"Type" : "String",
-		"Default" : "HPACNewsP-ElasticL-KUWSX4IQHDSD"
-	},
-
 	"AdminNode" : {
 		"Description" : "The Admin Node for the stack",
 		"Type" : "String",
-		"Default" : "i-97da517d"
+		"Default" : "i-6bdfa787"
 	},
 
 	"AutoScalingGroupMinSize" : {
 		"Description" : "The minimum number of instances of the Auto Scaling Group for the stack",
 		"Type" : "Number",
-		"Default" : 6,
+		"Default" : 2,
 		"MinValue": 1,
 		"ConstraintDescription": "Must be a number, one or greater"
-	},
-
-	"MasterDB" : {
-		"Description" : "The RDS Instance Name for the database stack",
-		"Type" : "String",
-		"Default" : "hdjhee21ma2vq6"
 	},
 
 	"CriticalAlarmTopic" : {
 		"Description" : "The name of the Nagios Critical Alarm SNS Topic",
 		"Type" : "String",
-		"Default" : "arn:aws:sns:us-east-1:014311208322:HUIT_Nagios_Critical"
+		"Default" : "arn:aws:sns:us-east-1:219880708180:HUIT_Nagios_Critical"
+	},
+
+	"MasterDB" : {
+		"Description" : "The RDS Instance Name for the database stack",
+		"Type" : "String",
+		"Default" : "HUIT-Nagios-CloudWatch-BootcampMasterDatabase"
 	},
 
 	"DBClass" : {
         	"Description" : "Database instance class",
       		"Type" : "String",
-		"Default" : "db.m3.large",
+		"Default" : "db.m1.small",
 		"AllowedValues" : [ 
 					"db.m1.large", 
 					"db.m1.small", 
@@ -329,21 +323,27 @@ For example: using the Parameter values from the examples above, the Parameters 
       		"ConstraintDescription" : "must select a valid database instance type."
     	},
 
-
     	"DBName": {
       		"Description" : "The Drupal database name",
       		"Type": "String",
-		"Default" : "wordpressdb",
+		"Default" : "hpacdrupaldb",
       		"MinLength": "1",
       		"MaxLength": "64",
       		"AllowedPattern" : "[a-zA-Z][a-zA-Z0-9]*",
       		"ConstraintDescription" : "must begin with a letter and contain only alphanumeric characters."
     	},
 
+	"ElasticLoadBalancer" : {
+		"Description" : "The Elastic Load Balancer for the stack",
+		"Type" : "String",
+		"Default" : "HUIT-Nagi-ElasticL-1G0TXD0NZRDMM"
+	},
+
+
     	"SiteName": {
       		"Description" : "Customer Site Name",
       		"Type": "String",
-		"Default" : "aws-test-huit-harvard-edu",
+		"Default" : "nagios-aws-cloudhacks-demo-huit-harvard-edu",
       		"MinLength": "1",
       		"MaxLength": "64",
       		"AllowedPattern" : "[a-zA-Z][a-zA-Z0-9-]*",
