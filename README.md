@@ -133,9 +133,9 @@ If you can't tell which one it is - like in this example - we'll look at the web
 Go to CloudFormation Stacks console: <br>
 https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks?filter=active
 
-Select the site stack, go to **Resources** and look for `AWS::RDS::DBInstance` in the _Type_ column.
+Select the site stack. Again, the name of the CloudFormation Stack for this demo website is `HUIT-Nagios-CloudWatch-Bootcamp`.
 
-Again, the name of the CloudFormation Stack for this demo website is `HUIT-AWS-and-Nagios-Boot-Camp-Drupal-Demo-Site`.
+Go to **Resources** and look for `AWS::RDS::DBInstance` in the _Type_ column.
 
 ### 4a.
 
@@ -157,7 +157,9 @@ This is an example of a website Stack with a clearly-marked Master and Replica R
 
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/rds-2b.png)
 
-In this case **copy the _Physical ID_ for the MasterDB** (in this example `Stefan-DemoMasterDatabase`). That's your value for **MasterDB**.
+In this case **copy the _Physical ID_ for the MasterDB** (in this example `Stefan-DemoMasterDatabase`). <br>
+That's your value for **MasterDB**.<br>
+![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/rds-2b.png)
 
 
 
