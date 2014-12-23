@@ -178,7 +178,7 @@ In Step #4 we found the value for MasterDB is `HUIT-Nagios-CloudWatch-BootcampMa
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/rds-3.png)
 
 **Copy the value shown in the Class column for that DB Instance.** <br>
-In this example it's `db.m3.large`
+In this example it's `db.m1.small`
 
 
 
@@ -186,18 +186,18 @@ In this example it's `db.m3.large`
 
 ### 6. **DBName**
 
-This is the application-layer database name. 
+This is the **application-layer** database name. 
 
 Since we have already identified which RDS Instance is the correct one (in step #4 above), we now know where to find the name of the database.
 
-Again for this example our MasterDB is `hdjhee21ma2vq6`.
+Again for this example our MasterDB is `HUIT-Nagios-CloudWatch-BootcampMasterDatabase`.
 
 Select (click) that RDS Instance. The full detail for that RDS Instance will be shown.
 
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/rds-4.png)
 
 **Copy the DB Name.** <br>
-In this example it's `wordpressdb`
+In this example it's `hpacdrupaldb`
 
 
 
