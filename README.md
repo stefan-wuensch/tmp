@@ -82,9 +82,11 @@ https://console.aws.amazon.com/ec2/autoscaling/home?region=us-east-1#AutoScaling
 Find the one for the site:
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/auto-scaling-min.png)
 
+In this example it's `HUIT-Nagios-CloudWatch-Bootcamp-WebServerGroup1-V8BKRFKTYGYQ`
+
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/auto-scaling-min-2.png)
 
-**Jot down the Min value for that group.** In this case, it's `6`.
+**Jot down the Min value for that group.** In this case, it's `2`.
 
 
 
