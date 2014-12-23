@@ -159,7 +159,7 @@ This is an example of a website Stack with a clearly-marked Master and Replica R
 
 In this case **copy the _Physical ID_ for the MasterDB** (in this example `Stefan-DemoMasterDatabase`). <br>
 That's your value for **MasterDB**.<br>
-![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/rds-2b.png)
+![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/rds-2c.png)
 
 
 
