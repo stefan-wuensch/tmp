@@ -522,6 +522,9 @@ For this example we will use `sudo` to run the commands as the `nagios` user whi
 
 **Each admin who uses the AWS CLI should create their own private credentials.**
 
+
+## Generate a CloudWatch Alarm message
+
 Using the example configurations from above, we need to supply the AWS CLI with the following parameters:
 
 1. `--alarm-name` (which is the name in CloudWatch not Nagios)
@@ -541,6 +544,18 @@ You can verify that the Alarm was set by going to CloudWatch and selecting that 
 Note that the Alarm changed to state ALARM from our CLI command, but since the actual state is OK it flipped right back. 
 This ensures that manual twiddling of an Alarm state for testing purposes won't make that Alarm become out-of-sync 
 with the actual condition being monitored.
+
+
+## Check Nagios for the SNS message
+
+Now that we know the CloudWatch Alarm has changed state, we should see in Nagios the notification from that alarm.
+
+When viewing the Service Status Details for the host, click `View Notifications For This Host`:<br>
+![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/nagios-2.png)
+
+
+
+
 
 
 
