@@ -528,14 +528,18 @@ For this example we will use `sudo` to run the commands as the `nagios` user whi
 Using the example configurations from above, we need to supply the AWS CLI with the following parameters:
 
 1. `--alarm-name` (which is the name in CloudWatch not Nagios)
-2. `--state-reason` - some text message explaining that it's a test
+2. `--state-reason` - some text message explaining that it's a test, and who ran the test
 3. `--state-value` - can be `ALARM` or `OK` or `INSUFFICIENT_DATA`
 4. `--profile` for the particular VPC, to get the AWS CLI credentials
 
+**Note**: For this demo, **enter your own name in the comment** _so you can demonstrate that you have successfully completed this boot camp!_
+
 A complete test command line for the example CloudWatch Alarm and Nagios Host and Service created above looks like:
 ```
-# sudo -u nagios aws cloudwatch set-alarm-state --alarm-name "nagios-aws-cloudhacks-demo-huit-harvard-edu RDS Read IO" --state-reason "Nagios TEST ONLY - please disregard this test - setting AWS alarm to ALARM" --state-value ALARM --profile cloudhacks
+# sudo -u nagios aws cloudwatch set-alarm-state --alarm-name "nagios-aws-cloudhacks-demo-huit-harvard-edu RDS Read IO" --state-reason "Nagios TEST ONLY - disregard this test - Boot camp completed by John Harvard" --state-value ALARM --profile cloudhacks
 ```
+
+**Don't forget to put your own name in the `--state-reason` comment!**
 
 You can verify that the Alarm was set by going to CloudWatch and selecting that Alarm, then view the **History** tab:
 
