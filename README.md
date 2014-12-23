@@ -210,20 +210,23 @@ This is the name of the ELB (Elastic Load Balancer).
 Go to the EC2 Dashboard section on **Load Balancers**: <br>
 https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LoadBalancers:
 
-Finding the correct ELB can be difficult, just like finding the correct RDS in Step 4. 
+**Finding the correct ELB can be difficult**, just like finding the correct RDS in Step 4. 
 
-Just like Step 4: if you can't easily figure out which ELB is the right one, refer to the site CloudFormation Stack.
+Just like Step 4: if you can't easily figure out which ELB is the right one, you'll refer to the site CloudFormation Stack. 
+
+In this example the ELB name is `HUIT-Nagi-ElasticL-1G0TXD0NZRDMM` (which is _somewhat_ helpful), 
+but for this demo we're assuming the ELB name is not clear at all.
 
 Go to CloudFormation Stacks again: <br>
 https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks?filter=active <br>
 
-Select the site stack (for this demo it's `HUIT-AWS-and-Nagios-Boot-Camp-Drupal-Demo-Site`), 
+Select the site stack (for this demo it's `HUIT-Nagios-CloudWatch-Bootcamp`), 
 go to **Resources** and you will find `ElasticLoadBalancer` in the _Logical ID_ column. 
 
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/elb-1.png)
 
 **Copy the _Physical ID_ for that ElasticLoadBalancer** <br>
-(in this example `HPACNewsP-ElasticL-KUWSX4IQHDSD`).
+(in this example `HUIT-Nagi-ElasticL-1G0TXD0NZRDMM`).
 
 
 
