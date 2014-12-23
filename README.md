@@ -4,7 +4,7 @@ This is a high-level tutorial, designed to be only what you need to get started.
 https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Detailed_Tutorial.md
 
 This tutorial uses a demo website in the CloudHacks AWS account. The name of the CloudFormation Stack for the 
-demo website is `HUIT-AWS-and-Nagios-Boot-Camp-Drupal-Demo-Site`. For details on how to create the site demo 
+demo website is `HUIT-Nagios-CloudWatch-Bootcamp`. For details on how to create the site demo 
 stack can be found at 
 https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Demo_Site_Stack_Setup.md
 
@@ -18,7 +18,7 @@ things like the database and load balancer.
 
 # Gathering Parameters
 
-The following Parameter values need to be collected from the web site Stack that is to be monitored.
+The following Parameter values need to be collected from the **web site Stack** that is to be monitored.
 
 All of the following **eight** Parameters will be used as inputs to the Alarm Stack creation.
 
