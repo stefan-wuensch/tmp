@@ -306,8 +306,8 @@ For example: using the Parameter values from the examples above, the Parameters 
 	},
 
 	"DBClass" : {
-        	"Description" : "Database instance class",
-      		"Type" : "String",
+		"Description" : "Database instance class",
+		"Type" : "String",
 		"Default" : "db.m1.small",
 		"AllowedValues" : [ 
 					"db.m1.large", 
@@ -320,18 +320,18 @@ For example: using the Parameter values from the examples above, the Parameters 
 					"db.m3.medium",
 					"db.t1.micro"
 		],
-      		"ConstraintDescription" : "must select a valid database instance type."
-    	},
+		"ConstraintDescription" : "must select a valid database instance type."
+	},
 
-    	"DBName": {
-      		"Description" : "The Drupal database name",
-      		"Type": "String",
+	"DBName": {
+		"Description" : "The Drupal database name",
+		"Type": "String",
 		"Default" : "hpacdrupaldb",
-      		"MinLength": "1",
-      		"MaxLength": "64",
-      		"AllowedPattern" : "[a-zA-Z][a-zA-Z0-9]*",
-      		"ConstraintDescription" : "must begin with a letter and contain only alphanumeric characters."
-    	},
+		"MinLength": "1",
+		"MaxLength": "64",
+		"AllowedPattern" : "[a-zA-Z][a-zA-Z0-9]*",
+		"ConstraintDescription" : "must begin with a letter and contain only alphanumeric characters."
+	},
 
 	"ElasticLoadBalancer" : {
 		"Description" : "The Elastic Load Balancer for the stack",
@@ -340,15 +340,15 @@ For example: using the Parameter values from the examples above, the Parameters 
 	},
 
 
-    	"SiteName": {
-      		"Description" : "Customer Site Name",
-      		"Type": "String",
+	"SiteName": {
+		"Description" : "Customer Site Name",
+		"Type": "String",
 		"Default" : "nagios-aws-cloudhacks-demo-huit-harvard-edu",
-      		"MinLength": "1",
-      		"MaxLength": "64",
-      		"AllowedPattern" : "[a-zA-Z][a-zA-Z0-9-]*",
-      		"ConstraintDescription" : "must begin with a letter and contain only alphanumeric characters."
-    	}
+		"MinLength": "1",
+		"MaxLength": "64",
+		"AllowedPattern" : "[a-zA-Z][a-zA-Z0-9-]*",
+		"ConstraintDescription" : "must begin with a letter and contain only alphanumeric characters."
+	}
     },
 ```
 
