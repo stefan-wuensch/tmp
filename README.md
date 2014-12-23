@@ -59,7 +59,7 @@ which only _deliver the content_ read-only.)
 Start at https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#Instances:sort=tag:Name
 
 Depending on how the site owner has set up the stack, the name may be easy to find or not easy at all. In this example 
-the Instance name makes it easy: `HUIT-Nagios-CloudWatch-Bootcamp - Admin Instance`
+the Instance name makes it easy: <br>`HUIT-Nagios-CloudWatch-Bootcamp - Admin Instance`
 
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/admin_node.png)
 
