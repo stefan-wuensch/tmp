@@ -371,9 +371,8 @@ Click the **Choose File** button and select your new Template (from where you sa
 
 **Verify the Parameter values** to be what you entered into Defaults in your Template.
 
-Using the example values above, it would look like this:
-
-(As noted previously: to view this image full-size, click the image and then choose **Raw**.)
+Using the example values above, it would look like this:<br>
+(As noted previously, to view this image full-size click the image and then choose **Raw**.)
 
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/cloudformation-3.png)
 
