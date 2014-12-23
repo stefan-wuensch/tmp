@@ -531,7 +531,7 @@ Using the example configurations from above, we need to supply the AWS CLI with 
 
 A complete test command line for the example CloudWatch Alarm and Nagios Host and Service created above looks like:
 ```
-# sudo -u nagios aws cloudwatch set-alarm-state --alarm-name "aws-test-huit-harvard-edu RDS Read IO" --state-reason "Nagios TEST ONLY - please disregard this test - setting AWS alarm to ALARM" --state-value ALARM --profile cloudhacks
+# sudo -u nagios aws cloudwatch set-alarm-state --alarm-name "nagios-aws-cloudhacks-demo-huit-harvard-edu RDS Read IO" --state-reason "Nagios TEST ONLY - please disregard this test - setting AWS alarm to ALARM" --state-value ALARM --profile cloudhacks
 ```
 
 You can verify that the Alarm was set by going to CloudWatch and selecting that Alarm, then view the **History** tab:
