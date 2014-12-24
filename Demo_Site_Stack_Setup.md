@@ -49,7 +49,7 @@ You should not need to change any values!
 
 **Leave the Options as they are.** Just click **Next**.
 
-If everything looks correct, **click the box** next to _I acknowledge that this template might cause AWS CloudFormation to create IAM resources._
+If everything looks correct, **click the box** next to _"I acknowledge that this template might cause AWS CloudFormation to create IAM resources."_
 
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/cloudformation-3.png)
 
