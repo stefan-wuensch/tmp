@@ -28,7 +28,7 @@ Next **Upload a template to Amazon S3**:
 
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/cloudformation-2.png)
 
-Click the **Choose File** button and select your new Template (from where you saved it in Step 1) and **click Next**.
+Click the **Choose File** button and select your new Template (from where you saved above) and **click Next**.
 
 **Verify the Parameter values** to be what you entered into Defaults in your Template.
 
@@ -44,4 +44,10 @@ After a few minutes your new Stack should go from `CREATE_IN_PROGRESS` to `CREAT
 
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/cloudformation-4.png)
 
+
+
+**Note**: If you need to re-create the CloudFormation Stack for the SNS Topics, the process is **exactly the same as above** 
+except you will use the template 
+[HUIT_Nagios_SNS_Topics_template.json](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/JSON-Templates/HUIT_Nagios_SNS_Topics_template.json) 
+and the name of the stack _does not matter_. It can be named anything that makes sense (like `SNS-Topics-for-Nagios-CloudWatch-Bootcamp` or similar).
 
