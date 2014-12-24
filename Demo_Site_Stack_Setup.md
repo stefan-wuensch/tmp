@@ -39,7 +39,7 @@ The name of the site stack for the bootcamp tutorial should be `HUIT-Nagios-Clou
 
 Next **Upload a template to Amazon S3**:
 
-![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/cloudformation-2.png)
+![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/cloudformation-2a.png)
 
 Click the **Choose File** button and select your new Template (from where you saved above) and **click Next**.
 
