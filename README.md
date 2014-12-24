@@ -157,11 +157,11 @@ have the customer tell you_ which RDS Instance is the Master.
 
 (Monitoring a Replica RDS can be done as well, but it's not included in this document.)
 
-This is an example of a website Stack with a clearly-marked Master and Replica RDS Instance:
+In this tutorial we have a website Stack with a clearly-marked Master and Replica RDS Instance:
 
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/rds-2b.png)
 
-In this case **copy the _Physical ID_ for the MasterDB** (in this example `HUIT-Nagios-CloudWatch-BootcampMasterDatabase`). <br>
+In this case **copy the _Physical ID_ for the MasterDB** (in this example `AWSbootcampDemoMasterDatabase`). <br>
 That's your value for **MasterDB**.<br>
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/rds-2c.png)
 
@@ -177,7 +177,7 @@ https://console.aws.amazon.com/rds/home?region=us-east-1#dbinstances: <br>
 
 Find that RDS ID on the page.
 
-In Step #4 we found the value for MasterDB is `HUIT-Nagios-CloudWatch-BootcampMasterDatabase`, so we're searching for that ID here:
+In Step #4 we found the value for MasterDB is `AWSbootcampDemoMasterDatabase`, so we're searching for that ID here:
 
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/rds-3.png)
 
@@ -194,7 +194,7 @@ This is the **application-layer** database name.
 
 Since we have already identified which RDS Instance is the correct one (in step #4 above), we now know where to find the name of the database.
 
-Again for this example our MasterDB is `HUIT-Nagios-CloudWatch-BootcampMasterDatabase`.
+Again for this example our MasterDB is `AWSbootcampDemoMasterDatabase`.
 
 Select (click) that RDS Instance. The full detail for that RDS Instance will be shown.
 
@@ -306,7 +306,7 @@ For example: using the Parameter values from the examples above, the Parameters 
 	"MasterDB" : {
 		"Description" : "The RDS Instance Name for the database stack",
 		"Type" : "String",
-		"Default" : "HUIT-Nagios-CloudWatch-BootcampMasterDatabase"
+		"Default" : "AWSbootcampDemoMasterDatabase"
 	},
 
 	"DBClass" : {
@@ -425,7 +425,7 @@ You can copy & paste this text block if you like:
 ```
 define host {
 	use					aws-host-active-check
-	host_name			nagios.aws.cloudhacks.demo.huit.harvard.edu:HUIT-Nagios-CloudWatch-BootcampMasterDatabase
+	host_name			nagios.aws.cloudhacks.demo.huit.harvard.edu:AWSbootcampDemoMasterDatabase
 	_AWS_Data			nagios.aws.cloudhacks.demo:AWS/RDS:DBInstanceIdentifier
 	contact_groups		aws-dev-group
 }
@@ -436,7 +436,7 @@ scope of this tutorial.)
 In this example the unique values for our Stack are:
 - `nagios.aws.cloudhacks.demo.huit.harvard.edu` as the first part of `host_name` - **this is the value from the `SiteName` Parameter, with dashes changed to dots**
 
-- `HUIT-Nagios-CloudWatch-BootcampMasterDatabase` as the second part of `host_name` - **this is the `MasterDB` Parameter from above**
+- `AWSbootcampDemoMasterDatabase` as the second part of `host_name` - **this is the `MasterDB` Parameter from above**
 
 - `nagios.aws.cloudhacks.demo` as the first part of `_AWS_Data` (the part before the first colon) - **this is a short form of `SiteName` which is used in Nagios displays**
 
@@ -456,7 +456,7 @@ Again, you can copy & paste this text block if you like.
 ```
 define service {
 	use					aws-service-CloudFront-Alarm
-	host_name			nagios.aws.cloudhacks.demo.huit.harvard.edu:HUIT-Nagios-CloudWatch-BootcampMasterDatabase
+	host_name			nagios.aws.cloudhacks.demo.huit.harvard.edu:AWSbootcampDemoMasterDatabase
 	service_description	ReadIOPS
 	contact_groups		aws-dev-group
 	check_command		check_AWS_CloudWatch_Alarm!cloudhacks
