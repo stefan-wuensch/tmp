@@ -539,7 +539,7 @@ A complete test command line for the example CloudWatch Alarm and Nagios Host an
 # sudo -u nagios aws cloudwatch set-alarm-state --alarm-name "nagios-aws-cloudhacks-demo-huit-harvard-edu RDS Read IO" --state-reason "Nagios TEST ONLY - disregard this test - Boot camp completed by John Harvard" --state-value ALARM --profile cloudhacks
 ```
 
-**Don't forget to put your own name in the `--state-reason` comment!**
+:arrow_right: **Don't forget to put your own name in the `--state-reason` comment!** :arrow_left:
 
 You can verify that the Alarm was set by going to CloudWatch and selecting that Alarm, then view the **History** tab:
 
@@ -558,8 +558,68 @@ When viewing the Service Status Details for the host, click `View Notifications 
 
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/nagios-3.png)
 
+If the CloudWatch Alarm was successfully received as an SNS message by Nagios, you'll see it:
+
+![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/nagios-4.png)
+
+**Note that the `--state-reason` text appears as the Nagios Information for that particular notification alert.**
 
 
+
+
+
+# Cleanup
+
+Now that you're done with this boot-camp tutorial, **make sure to clean house**. 
+
+Unless you are going to do additional work with your new stack of CloudWatch Alarms and/or the Nagios configuration, please delete them.
+
+
+## Clean up Nagios
+
+Simply edit the `hosts.cfg` and `services.cfg` again (same as above) and delete the Host definition and the Service definition you created.
+
+After saving the files, once again test the configuration before reloading it.
+
+**Run `service nagios configtest | grep -v "WARNING: Extinfo objects are deprecated"`**
+
+As long as you see the following all-clear, you're all set:
+```
+Total Warnings: 0
+Total Errors:   0
+```
+
+Then perform a configuration reload by running as root: `service nagios reload` and you're all done on the Nagios server.
+
+
+## Clean up your stack of CloudWatch Alarms
+
+Go to the [AWS Console for CloudFormation](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks?filter=active).
+
+Select your Stack of Alarms, and click Delete Stack.
+
+:warning: :warning: **BE ABSOLUTELY SURE YOU ARE DELETING YOUR OWN STACK and not someone else's stack!!!** :warning: :warning: 
+
+_When in doubt, don't delete anything._ It's better to leave a stack that only contains Alarms than to accidentally delete the wrong stack.
+
+![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/cleanup-1.png)
+
+If you are **sure** you want to delete the stack, click `Yes, Delete`.
+
+:warning: **THERE IS NO UNDO.** :warning: 
+
+![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/cleanup-1.png)
+
+
+
+# Conclusion
+
+:star: Congratulations, you have learned how to create your own monitoring of customer AWS site resources with Nagios! :star:
+
+If you're not completely exhausted by now, take a read through the more detailed tutorial. It has explanations of how 
+the different components work, and is based on a real-world production HPAC / HWP site.
+
+https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Detailed_Tutorial.md
 
 
 
