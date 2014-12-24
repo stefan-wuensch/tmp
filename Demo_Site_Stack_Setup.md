@@ -5,9 +5,21 @@ This document is a tutorial on how to set up the website stack used in the
 
 **This procedure should ONLY be used if the existing demo website stack used in the bootcamp tutorial needs to be re-created.**
 
+
+
+**Note**: If you need to re-create the CloudFormation Stack for the SNS Topics, the process is **exactly the same** 
+except you will use the template 
+[HUIT_Nagios_SNS_Topics_template.json](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/JSON-Templates/HUIT_Nagios_SNS_Topics_template.json) 
+and the name of the stack _does not matter_. It can be named anything that makes sense (like `SNS-Topics-for-Nagios-CloudWatch-Bootcamp` or similar).
+
+
+
+
+
 ## Download the template
 
-Download a copy of [Boot-camp website stack 2014-12-23.json](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/JSON-Templates/Boot-camp%20website%20stack%202014-12-23.json)
+Download a copy of the website stack template 
+[Boot-camp website stack 2014-12-23.json](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/JSON-Templates/Boot-camp%20website%20stack%202014-12-23.json)
 
 You should not need to edit it. All the default values are populated to make it ready-to-go for the bootcamp tutorial.
 
@@ -44,10 +56,4 @@ After a few minutes your new Stack should go from `CREATE_IN_PROGRESS` to `CREAT
 
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/cloudformation-4.png)
 
-
-
-**Note**: If you need to re-create the CloudFormation Stack for the SNS Topics, the process is **exactly the same as above** 
-except you will use the template 
-[HUIT_Nagios_SNS_Topics_template.json](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/JSON-Templates/HUIT_Nagios_SNS_Topics_template.json) 
-and the name of the stack _does not matter_. It can be named anything that makes sense (like `SNS-Topics-for-Nagios-CloudWatch-Bootcamp` or similar).
 
