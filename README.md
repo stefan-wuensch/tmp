@@ -203,7 +203,7 @@ Select (click) that RDS Instance. The full detail for that RDS Instance will be 
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/rds-4.png)
 
 **Copy the DB Name.** <br>
-In this example it's `hpacdrupaldb`
+In this example it's `drupaldb`
 
 
 
@@ -332,7 +332,7 @@ For example: using the Parameter values from the examples above, the Parameters 
 	"DBName": {
 		"Description" : "The Drupal database name",
 		"Type": "String",
-		"Default" : "hpacdrupaldb",
+		"Default" : "drupaldb",
 		"MinLength": "1",
 		"MaxLength": "64",
 		"AllowedPattern" : "[a-zA-Z][a-zA-Z0-9]*",
