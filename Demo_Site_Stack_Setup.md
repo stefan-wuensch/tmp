@@ -34,7 +34,8 @@ Click **Create Stack**:
 
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/cloudformation-1.png)
 
-**Enter a name for your Stack**. The name of the site stack for the bootcamp tutorial should be `HUIT-Nagios-CloudWatch-Bootcamp`
+**Enter a name for your Stack**. <br>
+The name of the site stack for the bootcamp tutorial should be `HUIT-Nagios-CloudWatch-Bootcamp`
 
 Next **Upload a template to Amazon S3**:
 
