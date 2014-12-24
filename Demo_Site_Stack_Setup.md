@@ -1,5 +1,3 @@
-:one:
-
 This document is a tutorial on how to set up the website stack used in the 
 [CloudWatch Alarms with Nagios boot-camp](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/README.md).
 
