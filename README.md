@@ -539,7 +539,7 @@ A complete test command line for the example CloudWatch Alarm and Nagios Host an
 # sudo -u nagios aws cloudwatch set-alarm-state --alarm-name "nagios-aws-cloudhacks-demo-huit-harvard-edu RDS Read IO" --state-reason "Nagios TEST ONLY - disregard this test - Boot camp completed by John Harvard" --state-value ALARM --profile cloudhacks
 ```
 
-:arrow_right: **Don't forget to put your own name in the `--state-reason` comment!** :arrow_left:
+**Don't forget to put your own name in the `--state-reason` comment!**
 
 You can verify that the Alarm was set by going to CloudWatch and selecting that Alarm, then view the **History** tab:
 
@@ -598,7 +598,7 @@ Go to the [AWS Console for CloudFormation](https://console.aws.amazon.com/cloudf
 
 Select your Stack of Alarms, and click Delete Stack.
 
-:warning: :warning: **BE ABSOLUTELY SURE YOU ARE DELETING YOUR OWN STACK and not someone else's stack!!!** :warning: :warning: 
+**BE ABSOLUTELY SURE YOU ARE DELETING YOUR OWN STACK and not someone else's stack!!!** 
 
 _When in doubt, don't delete anything._ It's better to leave a stack that only contains Alarms than to accidentally delete the wrong stack.
 
@@ -606,7 +606,7 @@ _When in doubt, don't delete anything._ It's better to leave a stack that only c
 
 If you are **sure** you want to delete the stack, click `Yes, Delete`.
 
-:warning: **THERE IS NO UNDO.** :warning: 
+**THERE IS NO UNDO.** 
 
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/cleanup-1.png)
 
@@ -614,7 +614,7 @@ If you are **sure** you want to delete the stack, click `Yes, Delete`.
 
 # Conclusion
 
-:star: Congratulations, you have learned how to create your own monitoring of customer AWS site resources with Nagios! :star:
+Congratulations, you have learned how to create your own monitoring of customer AWS site resources with Nagios!
 
 If you're not completely exhausted by now, take a read through the more detailed tutorial. It has explanations of how 
 the different components work, and is based on a real-world production HPAC / HWP site.
