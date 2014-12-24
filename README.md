@@ -80,6 +80,10 @@ This is the minimum number of EC2 **webserver** Instances the site will have. <b
 Go to EC2 Auto Scaling Groups: <br>
 https://console.aws.amazon.com/ec2/autoscaling/home?region=us-east-1#AutoScalingGroups:view=details
 
+If necessary, click **Auto Scaling Groups** to show the list.
+
+![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/auto-scaling.png)
+
 Find the one for the site:
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/auto-scaling-min.png)
 
