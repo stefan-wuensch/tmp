@@ -380,7 +380,7 @@ Click the **Choose File** button and select your new Template (from where you sa
 Using the example values above, it would look like this:<br>
 (As noted previously, to view this image full-size click the image and then choose **Raw**.)
 
-![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/cloudformation-3.png)
+![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/cloudformation-3a.png)
 
 **Click Next**.
 
