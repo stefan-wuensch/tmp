@@ -171,8 +171,8 @@ That's your value for **MasterDB**.<br>
 
 This is the Database Instance Class. It's the type and size of the database.
 
-Now that we know the RDS Instance ID (from Step 4b), go back to the RDS Instances console:<br>
-https://console.aws.amazon.com/rds/home?region=us-east-1#dbinstances: <br>
+Now that we know the RDS Instance ID (from Step 4b), go back to the 
+[RDS Instances console](https://console.aws.amazon.com/rds/home?region=us-east-1#dbinstances:) <br>
 ![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/rds-2d.png)
 
 Find that RDS ID on the page.
