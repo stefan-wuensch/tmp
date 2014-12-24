@@ -1,11 +1,3 @@
-**This folder contains code (most of which - if not all - being scripts) which create an interface between AWS and Nagios.**
-
-<hr>
-
-#### :one: Nagios-config-from-alarms.php
-
-XXX
-
 This file **README.md** is a step-by-step guide to setting up AWS CloudWatch Alarms that can be integrated with Nagios.
 
 This is a high-level tutorial, designed to be only what you need to get started. For detailed information, see
