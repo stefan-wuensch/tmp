@@ -608,7 +608,7 @@ If you are **sure** you want to delete the stack, click `Yes, Delete`.
 
 **THERE IS NO UNDO.** 
 
-![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/cleanup-1.png)
+![](https://github.com/HUIT-Systems-Management-Linux-UNIX/Cloud_Monitoring_Services/blob/master/Documentation/Images/cleanup-2.png)
 
 
 
