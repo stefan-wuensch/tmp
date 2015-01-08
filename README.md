@@ -16,3 +16,4 @@ http://nagios.sourceforge.net/docs/nagioscore/4/en/monitoring-publicservices.htm
 
 ## Custom Plugins
 
+See https://github.com/HUIT-Systems-Management-Linux-UNIX/HUIT-Nagios/tree/master/Custom_Plugins/
