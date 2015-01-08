@@ -6,7 +6,9 @@ A collection of code, configurations and documentation for HUIT Nagios https://n
 ## Documentation
 
 
-http://nagios.sourceforge.net/docs/nagioscore/4/en/monitoring-publicservices.html
+### Reading
+
+- http://nagios.sourceforge.net/docs/nagioscore/4/en/monitoring-publicservices.html
 
 
 ## Configuration Files
