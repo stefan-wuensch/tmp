@@ -5,6 +5,7 @@ A collection of code, configurations and documentation for HUIT Nagios https://n
 
 ## Configuration Files
 
+See https://github.com/HUIT-Systems-Management-Linux-UNIX/HUIT-Nagios/tree/master/Configuration_Files/
 
 
 ## Documentation
