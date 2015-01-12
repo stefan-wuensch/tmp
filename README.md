@@ -28,7 +28,7 @@ This repo is a collection of code, configurations and documentation for HUIT Nag
 
 8. Real-world Nagios requests in active tickets
 
-- [INC01095548](https:/harvard.service-now.com/nav_to.do?uri=incident.do?sys_id=4450b2ab0ff0b1002dfe5bd692050e83)
+- [INC01095548](https://harvard.service-now.com/nav_to.do?uri=incident.do?sys_id=4450b2ab0ff0b1002dfe5bd692050e83)
 
 
 ### Reading Material for above
