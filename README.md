@@ -55,11 +55,11 @@ A collection of code, configurations and documentation for HUIT Nagios https://n
 
 
 
-## Configuration Files
+## HUIT Configuration Files
 
 See https://github.com/HUIT-Systems-Management-Linux-UNIX/HUIT-Nagios/tree/master/Configuration_Files/
 
 
-## Custom Plugins
+## HUIT Custom Plugins
 
 See https://github.com/HUIT-Systems-Management-Linux-UNIX/HUIT-Nagios/tree/master/Custom_Plugins/
