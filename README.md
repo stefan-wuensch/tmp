@@ -9,10 +9,8 @@ A collection of code, configurations and documentation for HUIT Nagios https://n
 ### Internal Training Jan. 2015
 
 1. Intro to Nagios concepts
-
-Types of Nagios Objects
-
-Concepts of Plugins
+  * Types of Nagios Objects
+  * Concepts of Plugins
 
 2. Intro to HUIT Nagios
 
@@ -30,7 +28,7 @@ Concepts of Plugins
 ### Reading Material for above
 
 1. http://nagios.sourceforge.net/docs/nagioscore/4/en/configobject.html
-- http://nagios.sourceforge.net/docs/nagioscore/4/en/plugins.html
+  * http://nagios.sourceforge.net/docs/nagioscore/4/en/plugins.html
 
 3. http://nagios.sourceforge.net/docs/nagioscore/4/en/config.html
 4. http://nagios.sourceforge.net/docs/nagioscore/4/en/monitoring-publicservices.html
