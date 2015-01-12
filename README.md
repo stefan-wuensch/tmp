@@ -1,6 +1,6 @@
 # HUIT-Nagios
 
-A collection of code, configurations and documentation for HUIT Nagios https://nagios.huit.harvard.edu/
+This repo is a collection of code, configurations and documentation for HUIT Nagios: https://nagios.huit.harvard.edu/
 
 
 ## Documentation
