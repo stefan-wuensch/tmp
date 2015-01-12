@@ -26,6 +26,8 @@ This repo is a collection of code, configurations and documentation for HUIT Nag
 
 7. Common operations (Downtime and Acknowledgment)
 
+8. Real-world Nagios requests in active tickets
+
 
 ### Reading Material for above
 
