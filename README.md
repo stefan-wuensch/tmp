@@ -9,14 +9,16 @@ A collection of code, configurations and documentation for HUIT Nagios https://n
 ### Internal Training Jan. 2015
 
 1. Intro to Nagios concepts
-  * Types of Nagios Objects
-  * Concepts of Plugins
+  1. Types of Nagios configurations
+  2. Concepts of Plugins
 
 2. Intro to HUIT Nagios
 
-3. Configuring a Host object
+3. Configuration Objects
+  1. Configuring a Host object
+  2. Configuring a Service object
 
-4. Configuring a Service object
+4. Examples of public-facing Services
 
 5. Contacts and Contact Groups
 
@@ -27,13 +29,23 @@ A collection of code, configurations and documentation for HUIT Nagios https://n
 
 ### Reading Material for above
 
-1. http://nagios.sourceforge.net/docs/nagioscore/4/en/configobject.html
-  * http://nagios.sourceforge.net/docs/nagioscore/4/en/plugins.html
+1. http://nagios.sourceforge.net/docs/nagioscore/4/en/about.html#whatis
+  1. http://nagios.sourceforge.net/docs/nagioscore/4/en/config.html
+  2. http://nagios.sourceforge.net/docs/nagioscore/4/en/plugins.html
 
-3. http://nagios.sourceforge.net/docs/nagioscore/4/en/config.html
+2. https://nagios.huit.harvard.edu/nagios/
+
+3. http://nagios.sourceforge.net/docs/nagioscore/4/en/configobject.html
+  1. http://nagios.sourceforge.net/docs/nagioscore/4/en/objectdefinitions.html#host
+  2. http://nagios.sourceforge.net/docs/nagioscore/4/en/objectdefinitions.html#service
+
 4. http://nagios.sourceforge.net/docs/nagioscore/4/en/monitoring-publicservices.html
 
+5. http://nagios.sourceforge.net/docs/nagioscore/4/en/objectdefinitions.html#contact
+
 6. http://nagios.sourceforge.net/docs/nagioscore/4/en/notifications.html
+  * http://nagios.sourceforge.net/docs/nagioscore/4/en/objectdefinitions.html#command
+
 7. http://nagios.sourceforge.net/docs/nagioscore/4/en/downtime.html
 
 
