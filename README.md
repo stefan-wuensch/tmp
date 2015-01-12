@@ -27,8 +27,11 @@ This repo is a collection of code, configurations and documentation for HUIT Nag
 7. Common operations (Downtime and Acknowledgment)
 
 8. Real-world Nagios requests in Service Now tickets:
-
+  - [INC01030803](https://harvard.service-now.com/nav_to.do?uri=incident.do?sys_id=56828d326fa3a10097dd687f8e3ee4ae)
   - [INC01095548](https://harvard.service-now.com/nav_to.do?uri=incident.do?sys_id=4450b2ab0ff0b1002dfe5bd692050e83)
+  - [INC01117931](https://harvard.service-now.com/nav_to.do?uri=incident.do?sys_id=60de44050fe5bd002dfe5bd692050e3c)
+  - [INC01100916](https://harvard.service-now.com/nav_to.do?uri=incident.do?sys_id=2f743011c801750031f7236327c7f6e4)
+
 
 
 ### Reading Material for above
@@ -51,6 +54,7 @@ This repo is a collection of code, configurations and documentation for HUIT Nag
   * http://nagios.sourceforge.net/docs/nagioscore/4/en/objectdefinitions.html#command
 
 7. http://nagios.sourceforge.net/docs/nagioscore/4/en/downtime.html
+
 
 
 #### Nagios online docs Table of Contents
